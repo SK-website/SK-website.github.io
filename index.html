@@ -1,92 +1,200 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SV shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="css\style.css" rel="stylesheet">
+    <title>АРТ ГАЛЕРЕЯ</title>
 </head>
+
 <body>
     <!--navigation-->
-    <ol>
-        <li><a href = "index.html">Home</a></li>
-        <li><a href = "about.html">About</a></li>
-        <li><a href = "blog.html">Blog</a></li>
-        <li><a href = "contact.html">Contact</a></li>
-    </ol>
+    <header>
+        <nav class="navbar"> 
+            <ol>
+                <li><a href = "index.html">Главная</a></li>
+                <li><a href = "about.html">О нас</a></li>
+                <li><a href = "blog.html">Блог</a></li>
+                <li><a href = "contact.html">Контакты</a></li>
+            </ol>
+        </nav>
+    </header>
     <!--slider-->
-    <h1>SV SHOP</h1>
+    <section id="slider">
+        <header class="banner">
+            <h1>АРТ ГАЛЕРЕЯ</h1>
+        </header>
+    </section>
+    
     <!--categotries-->
-    <div>
-        <h2>Categories</h2>
-        <div>
-            <img src ="images/cat.jpg" width = 200 alt="Super Cat">
-            <a href = "category1.html"><h3>Category 1</h3></a>
-        </div>
-        <div>
-            <img src ="images/cats1.jpg" width = 200 alt="Super Cat">
-            <a href = "category1.html"><h3>Category 2</h3></a>
-        </div>
-        <div>
-            <img src ="images/cats2.jpg" width = 200 alt="Super Cat">
-            <a href = "category1.html"><h3>Category 3</h3></a>
-        </div>
-    </div>
-    
+    <section id="categories">
+        <header>
+            <h2>КАТЕГОРИИ</h2>
+        </header>
+            <div class="container">
+                <article class="col-4">
+                    <img src ="images/02.jpg" width = 200 alt="Super Cat">
+                    <a href = "category1.html"><h3>Масляная живопись</h3></a>
+                </article>
+                <article class="col-4">
+                    <img src ="images/03.jpg" width = 200 alt="Super Cat">
+                    <a href = "category1.html"><h3>Графика</h3></a>
+                </article>
+                <article class="col-4">
+                    <img src ="images/06.jpg" width = 200 alt="Super Cat">
+                    <a href = "category1.html"><h3>Акварель</h3></a>
+                </article>
+            </div>
+    </section>
+
     <!--showcase-->
-    <div>
-        <h2>TOP TRENDING PRODUCTS</h2>
-        <div>
-            <div>
-                <img src ="images/swan.jpg" width = 200>
-                <ul>
-                    <li><a href = "like.html">Like me</a></li>
-                
-                    <li><a href = "like.html">Add to cart</a></li>
-                    <li><a href = "like.html">Detail</a></li>
-                </ul>
-                <h3>Super product 1</h3>
-                <p>$100</p>
+    <section id="showcase">
+        <header>
+            <h2>НОВЫЕ ПОСТУПЛЕНИЯ</h2>
+        </header>
+        <div class="container">
+            <div class="row">
+                <article class="product col">
+                    <img src ="images/01.jpg" width = 200>
+                    <ul>
+                        <li><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
+                        <li><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
+                        <li><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
+                    </ul>
+                    <section>
+                        <h3>Название картины: Букет</b></h3>
+                        <p><i><b>$300</b></i></p>
+                        <p><i>Автор: Прохоров В.Н.</i></p>
+                    </section>
+                </article>
+                <article class="product col">
+                    <img src ="images/02.jpg" width = 200>
+                    <ul>
+                        <li><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
+                        <li><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
+                        <li><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
+                    </ul>
+                    <section>
+                        <h3>Название картины: </b></h3>
+                        <p><i><b>$300</b></i></p>
+                        <p><i>Автор: Прохоров В.Н.</i></p>
+                    </section>
+                </article>
+                <article class="product col">
+                    <img src ="images/01.jpg" width = 200>
+                    <ul>
+                        <li><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
+                        <li><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
+                        <li><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
+                    </ul>
+                    <section>
+                        <h3>Название картины: Букет</b></h3>
+                        <p><i><b>$300</b></i></p>
+                        <p><i>Автор: Прохоров В.Н.</i></p>
+                    </section>
+                </article>
+                <article class="product col">
+                    <img src ="images/01.jpg" width = 200>
+                    <ul>
+                        <li><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
+                        <li><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
+                        <li><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
+                    </ul>
+                    <section>
+                        <h3>Название картины: Букет</b></h3>
+                        <p><i><b>$300</b></i></p>
+                        <p><i>Автор: Прохоров В.Н.</i></p>
+                    </section>
+                </article>
             </div>
-            <div>
-                <img src ="images/swan.jpg" width = 200>
-                <ul>
-                    <li><a href = "like.html">Like me</a></li>
-                    <li><a href = "like.html">Add to cart</a></li>
-                    <li><a href = "like.html">Detail</a></li>
-                </ul>
-                <h3>Super product 2</h3>
-                <p>$100</p>
-            </div>
-            <div>
-                <img src ="images/swan.jpg" width = 200>
-                <ul>
-                    <li><a href = "like.html">Like me</a></li>
-                    <li><a href = "like.html">Add to cart</a></li>
-                    <li><a href = "like.html">Detail</a></li>
-                </ul>
-                <h3>Super product 3</h3>
-                <p>$100</p>
-            </div>
-            <div>
-                <img src ="images/swan.jpg" width = 200>
-                <ul>
-                    <li><a href = "like.html">Like me</a></li>
-                    <li><a href = "like.html">Add to cart</a></li>
-                    <li><a href = "like.html">Detail</a></li>
-                </ul>
-                <h3>Super product 4</h3>
-                <p>$100</p>
+            <div class="row">
+                <article class="product col">
+                    <img src ="images/01.jpg" width = 200>
+                    <ul>
+                        <li><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
+                        <li><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
+                        <li><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
+                    </ul>
+                    <section>
+                        <h3>Название картины: Букет</b></h3>
+                        <p><i><b>$300</b></i></p>
+                        <p><i>Автор: Прохоров В.Н.</i></p>
+                    </section>
+                </article>
+                <article class="product col">
+                    <img src ="images/02.jpg" width = 200>
+                    <ul>
+                        <li><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
+                        <li><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
+                        <li><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
+                    </ul>
+                    <section>
+                        <h3>Название картины: Сирень</b></h3>
+                        <p><i><b>$300</b></i></p>
+                        <p><i>Автор: Прохоров В.Н.</i></p>
+                    </section>
+                </article>
+                <article class="product col">
+                    <img src ="images/01.jpg" width = 200>
+                    <ul>
+                        <li><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
+                        <li><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
+                        <li><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
+                    </ul>
+                    <section>
+                        <h3>Название картины: Букет</b></h3>
+                        <p><i><b>$300</b></i></p>
+                        <p><i>Автор: Прохоров В.Н.</i></p>
+                    </section>
+                </article>
+                <article class="product col">
+                    <img src ="images/01.jpg" width = 200>
+                    <ul>
+                        <li><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
+                        <li><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
+                        <li><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
+                    </ul>
+                    <section>
+                        <h3>Название картины: Букет</b></h3>
+                        <p><i><b>$300</b></i></p>
+                        <p><i>Автор: Прохоров В.Н.</i></p>
+                    </section>
+                </article>
             </div>
         </div>
+    </section>  
 
-    </div>
-    
     <!--service-->
-    <h3>Services</h3>
-    <!--feedback-->
-    <h3>Subscribers</h3>
-    <!--footer-->
-    &copy;2020 SV Shop
+    <section>
+        <header>
+            <h2>Services</h2>
+        </header>
+    </section>
 
+    <!--feedback-->
+    <section>
+        <header>
+            <h2>Subscribers</h2>
+        </header>
+    </section>
+
+    <!--footer-->
+    <footer>
+        <section id="contact">
+            <article>Контакты          
+            </article>
+            <article>Поделиться          
+            </article>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-google-plus-square"></i></a>
+
+        </section>
+        <div>
+            &copy;2020 АРТ ГАЛЕРЕЯ
+        </div>
+    </footer>
 </body>
 </html>
