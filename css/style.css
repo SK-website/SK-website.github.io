@@ -54,9 +54,10 @@ img {
 .product {
     background-color: var(--primary-color1);
 }
+
 .row {
     margin-left: -15px;
-    margin-right: -15px;
+    margin-right: 0px;
     display: flex;
 }
 .col {
