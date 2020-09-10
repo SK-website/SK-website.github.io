@@ -1,5 +1,3 @@
-/*main style*/
-
 @import
 "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,900;1,300;1,400;1,700&display=swap";
 
@@ -13,17 +11,16 @@
     --primary-color4: rgb(64, 150, 211);
     --primary-color4:hsl(51, 96%, 51%);
     --primary-color5: rgb(48, 52, 58);
-}
+    --primary-color6: hsl
+    }
 html {
     font-size: 14px; 
     line-height: 1.5;
  }
-  
+ 
  body {
 overflow-x: hidden;
  color: rgb(31, 29, 29);
- font-weight: 400; 
-font-weight: 400; 
  font-weight: 400; 
  font-size: 1rem;
  line-height: 1.5;
@@ -37,6 +34,7 @@ font-weight: 400;
  background-repeat: no-repeat;
  background-attachment: fixed
  } 
+
 .container {
     width: 100%;
     padding-left: 15px;
@@ -61,7 +59,7 @@ img {
 }
 .col {
     max-width: 100%;
-}
+    }
 .col-auto {
     position: relative;
     width: 100%;
@@ -88,13 +86,14 @@ img {
     flex: 0 0 calc(9*100%/12);
     max-width: calc(9*100%/12);
 }
+
 .col-3 ul li{
     display: inline;
 }
 nav {
     background-color: var(--primary-color3);
     padding: 1 rem 1,5 rem;
-   }
+}
 .navbar-brand{
     font-size: 1.25rem;
     display: inline-block;
@@ -115,7 +114,7 @@ nav {
 }
 .navbar-links ul {
     list-style: none;
-    }
+}
 .navbar-nav {
     display: flex;
 }
@@ -124,7 +123,6 @@ nav {
     padding: 0.75rem;
     margin: 0 1rem;
     text-decoration: none;
-    color: var(--primary-color5);
 }
 .navbar-nav a:hover {
     color: var(--primary-color4);
