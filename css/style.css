@@ -118,6 +118,7 @@ nav {
     }
 .navbar-nav {
     display: flex;
+    white-space: nowrap;
 }
 .navbar-nav a {
     display: block;
