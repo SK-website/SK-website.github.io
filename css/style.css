@@ -92,9 +92,8 @@ img {
     display: inline;
 }
 nav {
-    background-color: ;
     padding: 1 rem 1,5 rem;
-   }
+}
 .navbar-brand{
     font-size: 1.25rem;
     display: inline-block;
@@ -155,7 +154,6 @@ nav {
 }
 /*footer*/
 .bg-blue {
-    background-color:;
     color: var(--primary-color5);
 }
 .mt-3 {
