@@ -29,7 +29,6 @@ overflow-x: hidden;
  line-height: 1.5;
  width: 100%;
  font-family: 'Roboto', sans-serif;
- background: var(--primary-color1);
  background-image: url(../images/background-7.jpg);
  filter: alpha(Opacity=90);
  background-size: cover;
