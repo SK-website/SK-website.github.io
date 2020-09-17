@@ -40,7 +40,7 @@
 
 @media (min-width: 890px) {
     .container {
-        max-width: 870%;
+        max-width: 870px;
     } 
     .container-lg {
     display: flex;
