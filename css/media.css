@@ -124,3 +124,42 @@
     padding-left: 0px;
     padding-right: 0px;
 }
+ /*Навигация*/
+ @media (min-width: 70em) {
+    .nav {
+         background: transparent;
+     }
+    .nav-center {
+        width: 90vw;
+        max-width: 1170px;
+        margin: 0 auto; 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        white-space: nowrap;
+        }
+    
+    .navbar-tool {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background: transparent;
+        order: 2;
+    }
+    .navbar-nav {
+        display: flex;
+    }
+    .navbar-nav a {
+        display: block;
+     }
+    .navbar-links {
+        overflow: hidden;
+        height: auto !important; 
+     }
+    .nav-toggle{
+        display: none;
+        order: 3;
+     
+    }
+    
+ }

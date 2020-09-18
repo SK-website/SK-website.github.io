@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,37 +8,54 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/media.css" rel="stylesheet">
 </head>
+
 <body>
     <!--Навигация-->
-    <header>
-        <nav>
-            <div class="nav-center">
-                <div class="nav-header">
-                    <span class="navbar-brand">ГАЛЕРЕЯ "МЫ"</span>
-                </div>
-                <div class="navbar-links">
-                    <ul class="navbar-nav">
-                        <li><a href="index.html">Главная</a></li>
-                        <li><a href="shop.html">В Галерею</a></li>
-                        <li><a href="about.html">О нас</a></li>
-                        <li><a href="blog.html">Блог</a></li>
-                        <li><a href="contact.html">Контакты</a></li>
+    <div class="container">
+        <header>
+            <nav id="nav">
+                <div class="nav-center">
+                    <div class="nav-header">
+                        <span class="navbar-brand">ГАЛЕРЕЯ "МЫ"</span>
+                    </div>
+                    <div class="navbar-links">
+                        <ul class="navbar-nav">
+                            <li><a href="index.html">Главная</a></li>
+                            <li><a href="shop.html">В Галерею</a></li>
+                            <li><a href="about.html">О нас</a></li>
+                            <li><a href="blog.html">Блог</a></li>
+                            <li><a href="contact.html">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <ul class="navbar-tool">
+                        <li><a href="#"><i class="fas fa-shopping-cart"></i>(2)</a></li>
+                        <li><a href="#"><i class="far fa-heart"></i>(3)</a></li>
+                        <li><a href="#"><i class="fas fa-user"></i>Войти</a></li>
                     </ul>
+                    <button class="nav-toggle"><i class="fas fa-bars"></i></button>
                 </div>
-                <ul class="navbar-tool">
-                    <li><a href="#"><i class="fas fa-shopping-cart"></i>(2)</a></li>
-                    <li><a href="#"><i class="far fa-heart"></i>(3)</a></li>
-                    <li><a href="#"><i class="fas fa-user"></i>Войти</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    </div> -->
-      <!--Витрина-->
-    <div class="container">        
+            </nav>
+        </header>
+    </div>
+    <!--Витрина-->
+    <div class="container">
+        <section class="hero pb-3 pt-3 d-flex">
+            <article class="container">
+                <div class="row">
+                    <div class="col-lg-6 banner-style"> 
+                            <a href="https://www.inmyroom.ru/posts/13035-kartiny-v-interere-kvartiry-roskosh-ili-ehlement-dizajna"
+                            class="btn btn-dark"><span><h1>КАРТИНЫ В ИНТЕРЬЕРЕ: РОСКОШЬ ИЛИ ЭЛЕМЕНТ ДИЗАЙНА</h1></span></a>
+                            <p>Картины в интерьере разных комнат: гостиная, спальня, кухня. Более 130 фото с готовыми вариантами дизайна.</p>
+                    </div>
+
+                </div>
+            </article>
+
+
+        </section>
         <div class="row">
-          <!--Категории-->
-            <div class="col-xl-3 col-lg-3 col-md-3">
+            <!--Категории-->
+            <div class="col-xl-3 col-lg-3 col-md-3 product">
                 <section>
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12">
@@ -46,193 +64,313 @@
                             </header>
                             <div>
                                 <div class="categories">
-                                    <img src ="images/07.jpg" class="img-fluid-1">
-                                    <a href = "category1.html"><h3>Масляная живопись</h3></a>
+                                    <img src="images/07.jpg" class="img-fluid-1">
+                                    <a href="category1.html"><strong>Масляная живопись</strong></a>
                                 </div>
                                 <div class="categories">
-                                    <img src ="images/04.jpg" class="img-fluid-1">
-                                    <a href = "category1.html"><h3>Графика</h3></a>
+                                    <img src="images/04.jpg" class="img-fluid-1">
+                                    <a href="category2.html"><strong>Графика</strong></a>
                                 </div>
                                 <div class="categories">
-                                    <img src ="images/14.jpg" class="img-fluid-1">
-                                    <a href = "category1.html"><h3>Другие техники</h3></a>
+                                    <img src="images/06.jpg" class="img-fluid-1">
+                                    <a href="category3.html"><strong>Другие техники</strong></a>
                                 </div>
                             </div>
                         </div>
-                    </div>  
+                    </div>
                 </section>
             </div>
-              <!--Новые поступления-->
+            <!--Новые поступления-->
             <div class="col-xl-9 col-lg-9 col-md-9 product">
-                <section> 
+                <section>
                     <header>
-                        <h3>НОВЫЕ ПОСТУПЛЕНИЯ</h2>
+                        <h3>НОВЫЕ ПОСТУПЛЕНИЯ</h3>
                     </header>
-                    <div class="row"> 
+                    <div class="row">
                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <img src ="images/01.jpg" class="img-fluid">
-                            <ul class="list-unstyled ta">
-                                <li class="li-inline"><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
-                                <li class="li-inline"><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
-                                <li class="li-inline"><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
-                            </ul>
-                            <section class="section-style">
-                                <p><i><b>Букет</b></i></p>
-                                <p><i>$300</i></p>
-                                <p><i>Прохоров В.</i></p>
-                            </section>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <img src ="images/03.jpg" class="img-fluid">
-                            <ul class="list-unstyled ta">
-                                <li class="li-inline"><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
-                                <li class="li-inline"><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
-                                <li class="li-inline"><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
-                            </ul>
-                            <section class="section-style">
-                                <p><i><b>Сервиз-1</b></i></p>
-                                <p><i>$10</i></p>
-                                <p><i>Лукова С.</i></p>
-                            </section>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <img src ="images/04.jpg" class="img-fluid">
-                            <ul class="list-unstyled ta">
-                                <li class="li-inline"><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
-                                <li class="li-inline"><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
-                                <li class="li-inline"><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
-                            </ul class="list-unstyled ta">
-                            <section class="section-style">
-                                <p><i><b>Сервиз-2</b></i></p>
-                                <p><i>$10</i></p>
-                                <p><i>Лукова С.</i></p>
-                            </section>
+                            <div class="card text-center">
+                                <img src="images/01.jpg" class="img-fluid">
+                                <div class="card-overlay">
+                                    <ul class="list-inline">
+                                        <li class="li-inline">
+                                            <a href="like.html" title="Нравится" class="btn btn-sm btn-outline-dark"><i
+                                                    class="far fa-thumbs-up"></i></a>
+                                            <a href="cart.html" title="В корзину" class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-shopping-cart"></i></a>
+                                            <a href="detail.html" title="Подробнее"
+                                                class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-info-circle"></i></a>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
+                                <section class="section-style">
+                                    <h4>Букет</h4>
+                                    <p class="small-text-muted">$300</p>
+                                    <p class="small-text-muted">Прохоров В.</p>
+                                </section>
                             </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <img src ="images/13.jpg" class="img-fluid">
-                            <ul class="list-unstyled ta">
-                                <li class="li-inline"><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
-                                <li class="li-inline"><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
-                                <li class="li-inline"><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
-                            </ul>
-                            <section class="section-style">
-                                <p><i><b>Летний букет</b></i></p>
-                                <p><i>$70</i></p>
-                                <p><i>Домар Вонас</i></p>
-                            </section>
-                        </div>
-                    
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <img src ="images/12.jpg" class="img-fluid">
-                            <ul class="list-unstyled ta">
-                                <li class="li-inline"><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
-                                <li class="li-inline"><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
-                                <li class="li-inline"><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
-                            </ul>
-                            <section class="section-style">
-                                <p><i><b>Причал</b></i></p>
-                                <p><i>$70</i></p>
-                                <p><i>Школа Григоряна В.</i></p>
-                            </section>
                         </div>
                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                             <img src ="images/16.jpg" class="img-fluid">
-                            <ul class="list-unstyled ta">
-                                <li class="li-inline"><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
-                                <li class="li-inline"><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
-                                <li class="li-inline"><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
-                            </ul>
-                            <section class="section-style">
-                                <p><i><b>Река Ижь</b></i></p>
-                                <p><i>$410</i></p>
-                                <p><i>Городилов А., Городилова Н.</i></p>
-                            </section>
+                            <div class="card text-center">
+                                <img src="images/03.jpg" class="img-fluid">
+                                <div class="card-overlay">
+                                    <ul class="list-inline">
+                                        <li class="li-inline">
+                                            <a href="like.html" title="Нравится" class="btn btn-sm btn-outline-dark"><i
+                                                    class="far fa-thumbs-up"></i></a>
+                                            <a href="cart.html" title="В корзину" class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-shopping-cart"></i></a>
+                                            <a href="detail.html" title="Подробнее"
+                                                class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-info-circle"></i></a>
+                                        </li>
+                                    </ul>
+                                    <section class="section-style">
+                                        <h4>Cервиз-1</h4>
+                                        <p class="small-text-muted">$10</p>
+                                        <p class="small-text-muted">Лукова С.</p>
+                                    </section>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <img src ="images/17.jpg" class="img-fluid">
-                            <ul class="list-unstyled ta">
-                                <li class="li-inline"><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
-                                <li class="li-inline"><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
-                                <li class="li-inline"><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
-                            </ul>
-                            <section class="section-style">
-                                <p><i><b>Середина лета</b></i></p>
-                                <p><i>$270</i></p>
-                                <p><i>Городилов А.</i></p>
-                            </section>
+                            <div class="card text-center">
+                                <img src="images/14.jpg" class="img-fluid">
+                                <div class="card-overlay">
+                                    <ul class="list-inline">
+                                        <li class="li-inline">
+                                            <a href="like.html" title="Нравится" class="btn btn-sm btn-outline-dark"><i
+                                                    class="far fa-thumbs-up"></i></a>
+                                            <a href="cart.html" title="В корзину" class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-shopping-cart"></i></a>
+                                            <a href="detail.html" title="Подробнее"
+                                                class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-info-circle"></i></a>
+                                        </li>
+                                    </ul>
+                                    <section class="section-style">
+                                        <h4>Параплан</h4>
+                                        <p class="small-text-muted">$100</p>
+                                        <p class="small-text-muted">Паршин А.</p>
+                                    </section>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <img src ="images/02.jpg" class="img-fluid">
-                            <ul class="list-unstyled ta">
-                                <li class="li-inline"><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
-                                <li class="li-inline"><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
-                                <li class="li-inline"><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
-                            </ul>
-                            <section class="section-style">
-                                <p><i><b>Середина лета</b></i></p>
-                                <p><i>$270</i></p>
-                                <p><i>Городилов А.</i></p>
-                            </section>
+                            <div class="card text-center">
+                                <img src="images/13.jpg" class="img-fluid">
+                                <div class="card-overlay">
+                                    <ul class="list-inline">
+                                        <li class="li-inline">
+                                            <a href="like.html" title="Нравится" class="btn btn-sm btn-outline-dark"><i
+                                                    class="far fa-thumbs-up"></i></a>
+                                            <a href="cart.html" title="В корзину" class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-shopping-cart"></i></a>
+                                            <a href="detail.html" title="Подробнее"
+                                                class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-info-circle"></i></a>
+                                        </li>
+                                    </ul>
+                                    <section class="section-style">
+                                        <h4>Летний букет</h4>
+                                        <p class="small-text-muted">$70</p>
+                                        <p class="small-text-muted">Домар Вонас</p>
+                                    </section>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <img src ="images/15.jpg" class="img-fluid">
-                            <ul class="list-unstyled ta">
-                                <li class="li-inline"><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
-                                <li class="li-inline"><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
-                                <li class="li-inline"><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
-                            </ul>
-                            <section class="section-style">
-                                <p><i><b>Причал</b></i></p>
-                                <p><i>$250</i></p>
-                                <p><i>Городилов А.</i></p>
-                            </section>
+                            <div class="card text-center">
+                                <img src="images/12.jpg" class="img-fluid">
+                                <div class="card-overlay">
+                                    <ul class="list-inline">
+                                        <li class="li-inline">
+                                            <a href="like.html" title="Нравится" class="btn btn-sm btn-outline-dark"><i
+                                                    class="far fa-thumbs-up"></i></a>
+                                            <a href="cart.html" title="В корзину" class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-shopping-cart"></i></a>
+                                            <a href="detail.html" title="Подробнее"
+                                                class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-info-circle"></i></a>
+                                        </li>
+                                    </ul>
+                                    <section class="section-style">
+                                        <h4>Причал</h4>
+                                        <p class="small-text-muted">$70</p>
+                                        <p class="small-text-muted">Школа Григоряна В.</p>
+                                    </section>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <img src ="images/05.jpg" class="img-fluid">
-                            <ul class="list-unstyled ta">
-                                <li class="li-inline"><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
-                                <li class="li-inline"><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
-                                <li class="li-inline"><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
-                            </ul>
-                            <section class="section-style">
-                                <p><i><b>Сервиз-3</b></i></p>
-                                <p><i>$10</i></p>
-                                <p><i>Лукова С.</i></p>
-                            </section>
+                            <div class="card text-center">
+                                <img src="images/16.jpg" class="img-fluid">
+                                <div class="card-overlay">
+                                    <ul class="list-inline">
+                                        <li class="li-inline">
+                                            <a href="like.html" title="Нравится" class="btn btn-sm btn-outline-dark"><i
+                                                    class="far fa-thumbs-up"></i></a>
+                                            <a href="cart.html" title="В корзину" class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-shopping-cart"></i></a>
+                                            <a href="detail.html" title="Подробнее"
+                                                class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-info-circle"></i></a>
+                                        </li>
+                                    </ul>
+                                    <section class="section-style">
+                                        <h4>Река Ижь</h4>
+                                        <p class="small-text-muted">$410</p>
+                                        <p class="small-text-muted">Городилов А., Городилова Н.</p>
+                                    </section>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <img src ="images/06.jpg" class="img-fluid">
-                            <ul class="list-unstyled ta">
-                                <li class="li-inline"><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
-                                <li class="li-inline"><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
-                                <li class="li-inline"><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
-                            </ul>
-                            <section class="section-style">
-                                <p><i><b>Смородина</b></i></p>
-                                <p><i>$20</i></p>
-                                <p><i>Лукова С.</i></p>
-                            </section>
+                            <div class="card text-center">
+                                <img src="images/17.jpg" class="img-fluid">
+                                <div class="card-overlay">
+                                    <ul class="list-inline">
+                                        <li class="li-inline">
+                                            <a href="like.html" title="Нравится" class="btn btn-sm btn-outline-dark"><i
+                                                    class="far fa-thumbs-up"></i></a>
+                                            <a href="cart.html" title="В корзину" class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-shopping-cart"></i></a>
+                                            <a href="detail.html" title="Подробнее"
+                                                class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-info-circle"></i></a>
+                                        </li>
+                                    </ul>
+                                    <section class="section-style">
+                                        <h4>Середина лета</h4>
+                                        <p class="small-text-muted">$210</p>
+                                        <p class="small-text-muted">Городилов А.</p>
+                                    </section>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <img src ="images/14.jpg" class="img-fluid">
-                            <ul class="list-unstyled ta">
-                                <li class="li-inline"><a href = "like.html" title="Нравится"><button><i class="far fa-thumbs-up"></i></button></a></li>
-                                <li class="li-inline"><a href = "cart.html" title="В корзину"><button><i class="fas fa-shopping-cart"></i></i></button></a></li>
-                                <li class="li-inline"><a href = "detail.html" title="Подробнее"><button><i class="fas fa-info-circle"></i></i></button></a></li>
-                            </ul>
-                            <section class="section-style">
-                                <p><i><b>Параплан</b></i></p>
-                                <p><i>$400</i></p>
-                                <p><i>Паршин А.</i></p>
-                            </section>
+                            <div class="card text-center">
+                                <img src="images/02.jpg" class="img-fluid">
+                                <div class="card-overlay">
+                                    <ul class="list-inline">
+                                        <li class="li-inline">
+                                            <a href="like.html" title="Нравится" class="btn btn-sm btn-outline-dark"><i
+                                                    class="far fa-thumbs-up"></i></a>
+                                            <a href="cart.html" title="В корзину" class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-shopping-cart"></i></a>
+                                            <a href="detail.html" title="Подробнее"
+                                                class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-info-circle"></i></a>
+                                        </li>
+                                    </ul>
+                                    <section class="section-style">
+                                        <h4>Сирень</h4>
+                                        <p class="small-text-muted">$250</p>
+                                        <p class="small-text-muted">Прохоров В.</p>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                            <div class="card text-center">
+                                <img src="images/15.jpg" class="img-fluid">
+                                <div class="card-overlay">
+                                    <ul class="list-inline">
+                                        <li class="li-inline">
+                                            <a href="like.html" title="Нравится" class="btn btn-sm btn-outline-dark"><i
+                                                    class="far fa-thumbs-up"></i></a>
+                                            <a href="cart.html" title="В корзину" class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-shopping-cart"></i></a>
+                                            <a href="detail.html" title="Подробнее"
+                                                class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-info-circle"></i></a>
+                                        </li>
+                                    </ul>
+                                    <section class="section-style">
+                                        <h4>Причал</h4>
+                                        <p class="small-text-muted">$250</p>
+                                        <p class="small-text-muted">Городилов А.</p>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                            <div class="card text-center">
+                                <img src="images/05.jpg" class="img-fluid">
+                                <div class="card-overlay">
+                                    <ul class="list-inline">
+                                        <li class="li-inline">
+                                            <a href="like.html" title="Нравится" class="btn btn-sm btn-outline-dark"><i
+                                                    class="far fa-thumbs-up"></i></a>
+                                            <a href="cart.html" title="В корзину" class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-shopping-cart"></i></a>
+                                            <a href="detail.html" title="Подробнее"
+                                                class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-info-circle"></i></a>
+                                        </li>
+                                    </ul>
+                                    <section class="section-style">
+                                        <h4>Сервиз-2</h4>
+                                        <p class="small-text-muted">$10</p>
+                                        <p class="small-text-muted">Лукова С.</p>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                            <div class="card text-center">
+                                <img src="images/06.jpg" class="img-fluid">
+                                <div class="card-overlay">
+                                    <ul class="list-inline">
+                                        <li class="li-inline">
+                                            <a href="like.html" title="Нравится" class="btn btn-sm btn-outline-dark"><i
+                                                    class="far fa-thumbs-up"></i></a>
+                                            <a href="cart.html" title="В корзину" class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-shopping-cart"></i></a>
+                                            <a href="detail.html" title="Подробнее"
+                                                class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-info-circle"></i></a>
+                                        </li>
+                                    </ul>
+                                    <section class="section-style">
+                                        <h4>Смородина</h4>
+                                        <p class="small-text-muted">$20</p>
+                                        <p class="small-text-muted">Лукова С.</p>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                            <div class="card text-center">
+                                <img src="images/14.jpg" class="img-fluid">
+                                <div class="card-overlay">
+                                    <ul class="list-inline">
+                                        <li class="li-inline">
+                                            <a href="like.html" title="Нравится" class="btn btn-sm btn-outline-dark"><i
+                                                    class="far fa-thumbs-up"></i></a>
+                                            <a href="cart.html" title="В корзину" class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-shopping-cart"></i></a>
+                                            <a href="detail.html" title="Подробнее"
+                                                class="btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-info-circle"></i></a>
+                                        </li>
+                                    </ul>
+                                    <section class="section-style">
+                                        <h4>Параплан</h4>
+                                        <p class="small-text-muted">$100</p>
+                                        <p class="small-text-muted">Паршин А.</p>
+                                    </section>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
             </div>
         </div>
     </div>
-     <!--footer-->
-     <footer class="bg mt-3">
+    <!--footer-->
+    <footer class="bg mt-3">
         <div class="container">
             <div class="container py-4">
                 <div class="row py-5 lg-font sm-font">
@@ -283,4 +421,5 @@
         </div>
     </footer>
 </body>
+
 </html>
