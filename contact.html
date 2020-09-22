@@ -3,22 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>"МЫ" АРТ ГАЛЕРЕЯ</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/media.css" rel="stylesheet">
+    <link href="css/effects.css" rel="stylesheet">
+    <link href="css/nav.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+
 </head>
 <body>
-    <!--navigation-->
-    <ol>
-        <li><a href = "index.html">Home</a></li>
-        <li><a href = "about.html">About</a></li>
-        <li><a href = "blog.html">Blog</a></li>
-        <li><a href = "contact.html">Contact</a></li>
-    </ol>
-    
-    <h1>Contact page</h1>
+        <!--Навигация-->
+        <div class="container">
+            <header>
+                <nav id="nav">
+                    <div class="nav-center">
+                        <div class="nav-header">
+                            <span class="navbar-brand">ГАЛЕРЕЯ "МЫ"</span>
+                        </div> 
+                        <input id="hamburger" type="checkbox" class="trigger"></inpiut>
+                        <div class="navbar-links brackets">
+                            <ul class="navbar-nav">
+                                <li><a href="index.html">Главная</a></li>
+                                <li><a href="shop.html">В Галерею</a></li>
+                                <li><a href="about.html">О нас</a></li>
+                                <li><a href="blog.html">Блог</a></li>
+                                <li><a href="contact.html">Контакты</a></li>
+                            </ul>
+                        </div>
+                        <ul class="navbar-tool">
+                            <li><a href="#"><i class="fas fa-shopping-cart"></i>(2)</a></li>
+                            <li><a href="#"><i class="far fa-heart"></i>(3)</a></li>
+                            <li><a href="#login"><i class="fas fa-user"></i>Войти</a></li>
+                        </ul>
+                        <label for="hamburger"><i class="nav-toggle fas fa-bars"></i></label>
+                    </div>
+                </nav>
+            </header>
+        </div>
+        <div class="container">
+            <div class="row mb-3 align-items-center">
+                <div class="col-md-6 mb-2 pl-4">
+                    <form class="text-center border p-5 m-auto" action="https://google.com" method="GET">
+                        <h3 class="mb-4 text-uppercase">Связаться с нами</h3>
+                        <div class="form-control form-radio mb-4">
+                            <input type="radio" name="gender"> Г-жа
+                            <input type="radio" name="gender"> Г-н
+                        </div>
+                        <input class="form-control mb-4" type="text" name="username" id="username" value="" placeholder="Имя"> 
+                        <input class="form-control mb-4" type="email" name="email" value="" placeholder="Адрес электронной почты">
+                                                <label for="">Тема
+                            <select class="form-select" name="subject" id="">
+                                <option value="" disabled>Выберите тему</option>
+                                <option value="1">Отзыв</option>
+                                <option value="2">Жалоба</option>
+                                <option value="3">Сотрудничество</option>
+                                
+                            </select>
+                        </label>
+                        <div class="form-group">
+                            <textarea name="message" id="" class="form-control rounded-0 mb-4" col="30" row="20">
+                            </textarea>    
+                        </div>
+                        <div class="form-control form-checkbox mb-4">
+                            <label>
+                                <input type="checkbox" class="control-input"> Отправить мне копию этого сообщения
+                            </label>  
+                        </div>
 
+                        <button type="submit" class="btn btn-dark btn-block">Отправить</button>
+                    </form>
+                    
+                </div>
+                <div class="col-md-6 mb-2 text-center">
+                    <h4 class="text-uppercase">Адрес</h4>
+                    <h4 class="text-uppercase">Схема проезда</h4>
+                    <h4 class="text-uppercase">Контактные телефоны</h4>
+                </div> 
+            </div>
+        
+
+        </div>
+   
     <!--footer-->
     <footer>
-    &copy;2020 SV Shop
-    </footer>
+        <footer class="bg-footer mt-3">
+            <div class="container">
+                <div class="container py-4">
+                    <div class="row lg-font sm-font">
+                        <!-- 3 columns-->
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12  mb-3">
+                            <h4 class="text-uppercase">Услуги</h4>
+                            <ul class="list-unstyled xl-font lg-font md-font sm-font">
+                                <li><a class="footer-link" href="shop.html">В Галерею</a></li>
+                                <li><a class="footer-link" href="#">Дополнительные услуги</a></li>
+                                <li><a class="footer-link" href="#">Возврат товара</a></li>
+                                <li><a class="footer-link" href="#">Оплата и доставка</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-3">
+                            <h4 class="text-uppercase">О Галерее</h4>
+                            <ul class="list-unstyled xl-font lg-font md-font sm-font">
+                                <li><a class="footer-link" href="contact.html">Контакты</a></li>
+                                <li><a class="footer-link" href="#">Сотрудничество</a></li>
+                                <li><a class="footer-link" href="#">Блог</a></li>
+                                <li><a class="footer-link" href="#">Ответы на вопросы</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-3">
+                            <h4 class="text-uppercase">Мы в соцсетях</h4>
+                            <ul class="list-unstyled footer-socials social-icon xl-font lg-font md-font sm-font">
+                                <li><a class="footer-link twitter" href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                                <li><a class="footer-link facebook" href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                                </li>
+                                <li><a class="footer-link instagram" href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                                </li>
+                                <li><a class="footer-link google-plus" href="#"><i class="fab fa-google-plus"></i>
+                                        Google</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top pt-4">
+                    <!-- 2 columns -->
+                    <div class="row">
+                        <div class="xl-font lg-font md-font sm-font col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <p class="small text-muted mb-0">&copy; 2020 All rights reserved.</p>
+                        </div>
+                        <div class="xl-font lg-font md-font sm-font col-xl-6 col-lg-6 col-md-6 col-sm-12 text-right">
+                            <p class="text-white reset-anchor">Template designed by <a href="#">My Temple</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div id="login" class="modal text-center">
+            <div class="dialog">
+                <a href="#close" class="close">X</a>
+                <form class="border p-5 m-auto" action="https://google.com" method="GET">
+                    <h3 class="mb-2 text-uppercase">Авторизация</h3>
+                    <div class= "mb-4">
+                        <input class="form-control" type="email" name="email" value="" placeholder="Адрес электронной почты">
+                    </div>
+                    <div class="mb-4">
+                        <input class="form-control" type="password" name="password" placeholder="Пароль"> 
+                    </div>
+                    <div class="form-control form-checkbox mb-1">
+                        <label>
+                            <input type="checkbox" class="control-input">Запомнить меня
+                        </label>  
+                    </div> 
+                    <p class="my-1"><a href="forgot.html">Забыл пароль</a></p>
+                    <button type="submit" class="btn btn-dark btn-block">Войти</button>
+                    <p class="my-1">или <a href="#register">Зарегистрироваться</a></p>
+                   
+               </form>
+            </div>
+        </div>
+     
+        <div id="register" class="modal text-center">
+            <div class="dialog">
+                <a href="#close" class="close">X</a>
+                <form class="border p-5 m-auto" action="https://google.com" method="GET">
+                    <h3 class="mb-2 text-uppercase">Регистрация</h3>
+                    <div class="row mb-4">
+                        <div class="col-md-6 mx-0">
+                            <input class="form-control" type="text" name="firstname" value="" placeholder="Имя">
+                        </div>
+                        <div class="col-md-6 mx-0">
+                            <input class="form-control" type="text" name="lastname" value="" placeholder="Фамилия">
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <input class="form-control" type="email" name="email" value="" placeholder="Адрес электронной почты">
+                    </div>
+                    <div class="row mb-4">
+                        <input class="form-control" type="password" name="password" placeholder="Пароль">  
+                        <input class="form-control" type="password" name="confirm" placeholder="Подтвердите пароль"> 
+                    </div>
+                    <button type="submit" class="btn btn-dark btn-block">Зарегистрироваться</button>
+                    <p class="my-1">Уже зарегистрированы? <a href="login.html">Войти</a></p>
+                </form>
+            </div>
+        </div>
+
 </body>
 </html>

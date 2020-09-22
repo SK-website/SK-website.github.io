@@ -1,0 +1,99 @@
+
+.carousel {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 60vh;
+}
+
+.slides {
+float: left;
+}
+
+.slide {
+    width: 100%;
+    height: 10vh;
+    top: 0;
+    left: 0;
+    bottom: o;
+    right: 0;
+}
+.slide::nth-of-type(1) {
+    background-color: rgb(104, 50, 62);
+
+}
+.slide::nth-of-type(2) {
+    background-color: rgb(145, 179, 118);
+
+}.slide::nth-of-type(3) {
+    background-color: red;
+
+}.slide::nth-of-type(4) {
+    background-color: rgb(161, 94, 94);
+
+}
+.slide::nth-of-type51) {
+    background-color: gold;
+}
+.slide .items {
+width: 50%;
+line-height: 0;
+margin: 0;
+position: relative;
+}
+
+.slides .items {
+    width: 500%;
+    line-height: 0;
+    margin: 0;
+    position: relative;
+}
+.overflow {
+    width: 100%;
+    overflow: hidden;
+}
+.indicators {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+.indicator {
+width: 1.3rem;
+height: 1.3rem;
+border-radius: 50%;
+display: inline-block;
+z-index: 2;
+cursor: pointer;
+background: gray;
+border: sandybrown 2px solid;
+opacity: 0.35;
+margin: 0 2.5.px;
+}
+.indicator:hover .indicator:focus .indicator:active{
+    opacity: 1;
+}
+ 
+.activator {
+    display: none;
+
+}
+.activator:nth-of-type(1):checked~.slides .items {
+margin-left: 0;
+}
+.activator:nth-of-type(2):checked~.slides .items {
+margin-left: -100%;
+}
+.activator:nth-of-type(3):checked~.slides .items {
+margin-left: -200%;
+}
+.activator:nth-of-type(4):checked~.slides .items {
+margin-left: -300%;
+}
+.activator:nth-of-type(5):checked~.slides .items {
+margin-left: -400%;
+}
+
+/*Navigation*/
+
