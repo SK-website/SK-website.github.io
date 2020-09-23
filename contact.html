@@ -9,7 +9,8 @@
     <link href="css/effects.css" rel="stylesheet">
     <link href="css/nav.css" rel="stylesheet">
     <link href="css/form.css" rel="stylesheet">
-    <link rel="icon" href="favicon.ico">
+    <link href="css/jsstyle.css" rel="stylesheet">
+    <!--<link rel="icon" href="favicon.ico">-->
 
 </head>
 <body>
@@ -33,7 +34,7 @@
                         </div>
                         <ul class="navbar-tool">
                             <li><a href="#"><i class="fas fa-shopping-cart"></i>(2)</a></li>
-                            <li><a href="#"><i class="far fa-heart"></i>(3)</a></li>
+                            <li><a href="#"><i class="far fa-heart"></i>(<small class="like-me">0</small>)</a></li>
                             <li><a href="#login"><i class="fas fa-user"></i>Войти</a></li>
                         </ul>
                         <label for="hamburger"><i class="nav-toggle fas fa-bars"></i></label>
@@ -153,9 +154,9 @@
                             <input type="checkbox" class="control-input">Запомнить меня
                         </label>  
                     </div> 
-                    <p class="my-1"><a href="forgot.html">Забыл пароль</a></p>
+                    <p class="my-1"><a href="forgot.html" class="form-link">Забыл пароль</a></p>
                     <button type="submit" class="btn btn-dark btn-block">Войти</button>
-                    <p class="my-1">или <a href="#register">Зарегистрироваться</a></p>
+                    <p class="my-1">или <a href="#register" class="form-link">Зарегистрироваться</a></p>
                    
                </form>
             </div>
@@ -182,7 +183,7 @@
                         <input class="form-control" type="password" name="confirm" placeholder="Подтвердите пароль"> 
                     </div>
                     <button type="submit" class="btn btn-dark btn-block">Зарегистрироваться</button>
-                    <p class="my-1">Уже зарегистрированы? <a href="login.html">Войти</a></p>
+                    <p class="my-1">Уже зарегистрированы? <a href="login.html" class="form-link">Войти</a></p>
                 </form>
             </div>
         </div>

@@ -1,0 +1,6 @@
+/*Стили js*/
+.added{
+    border: 2px solid transparent ;
+    border-radius: 50%;
+    color: rgb(182, 158, 158)
+}
