@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>"МЫ" АРТ ГАЛЕРЕЯ</title>
+
     <link href="css/style.css" rel="stylesheet">
     <link href="css/media.css" rel="stylesheet">
     <link href="css/effects.css" rel="stylesheet">
     <link href="css/nav.css" rel="stylesheet">
     <link href="css/form.css" rel="stylesheet">
-    <link href="css/jsstyle.css" rel="stylesheet">
+    <link href="css/cart.css" rel="stylesheet">
 
 </head>
 
@@ -34,7 +35,7 @@
                         </ul>
                     </div>
                     <ul class="navbar-tool">
-                        <li><a href="#"><i class="fas fa-shopping-cart"></i>(2)</a></li>
+                        <li><a href="#"><i class="fas fa-shopping-basket"></i></i>(<small class="to-cart">0</small>)</a></li>
                         <li><a href="#"><i class="far fa-heart"></i>(<small class="like-me">0</small>)</a></li>
                         <li><a href="#login"><i class="fas fa-user"></i>Войти</a></li>
                     </ul>
@@ -43,6 +44,40 @@
             </nav>
         </header>
     </div>
+
+    <!--Корзина-->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <button class="close-btn"><i class="fas fa-times"></i></button>
+            <h5 class="logo">Ваша корзина</h5>
+        </div>
+        
+        <div class="cart-items">
+            <div class="cart-item">
+                <div class="picture product-img">
+                    <img src="images/04.jpg" alt="Фото картины"
+                    class="img-fluid w-100">
+                </div>
+                <div class="product-name">Название товара
+                </div>
+                <div class="remove-btn text-right">
+                    <a href="#" class="reset-anchor m-auto" title="Удалить из корзины"><i class="fas fa-trash-alt"></i></a>
+                </div>
+                <div class="quantity">
+                    <div class="border d-flex justify-content-around mx-auto">
+                        <i class="fas fa-caret-left"></i>
+                        <span class="border-1 p-1 amount">1</span>
+                        <i class="fas fa-caret-right"></i>
+                    </div>
+                </div>
+                <div class="price">
+                    $ <span class="product-price">123</span>
+                    <span class="subtotal"></span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
     <!--Витрина-->
     <div class="container">
         <section class="hero pb-3 pt-3 d-flex">
@@ -118,22 +153,24 @@
                                     <div class="card-overlay">
                                     <ul class="list-inline">
                                         <li class="li-inline">
-                                            <a href="like.html" title="Нравится"
-                                                class="btn btn-sm btn-outline-dark"><i
-                                                class="far fa-thumbs-up"></i></a>
-                                            <a href="cart.html" title="В корзину"
-                                                class="btn btn-sm btn-outline-dark"><i
-                                                class="fas fa-shopping-cart"></i></a>
+                                            <a href="#" title="Нравится"
+                                                class="heart-title btn btn-sm btn-outline-dark"><i
+                                                    class="far fa-thumbs-up"></i></a>
+                                            <a href="#" title="В корзину"
+                                                class="cart-title btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-shopping-cart"></i></a>
                                             <a href="detail.html" title="Подробнее"
                                                 class="btn btn-sm btn-outline-dark"><i
-                                                class="fas fa-info-circle"></i></a>
+                                                    class="fas fa-info-circle"></i></a>
                                         </li>
                                     </ul>
                                 </div>
                                 </div>
+                                <section class="section-style">
                                 <h4>Букет</h4>
                                 <p class="small text-muted">$250</p>
                                 <p class="small text-muted">Прохоров В.</p>
+                                </section>
                             </div>
                         </div>
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
@@ -143,11 +180,11 @@
                                 <div class="card-overlay">
                                     <ul class="list-inline">
                                         <li class="li-inline">
-                                                <a href="like.html" title="Нравится"
-                                                    class="btn btn-sm btn-outline-dark"><i
+                                                <a href="#" title="Нравится"
+                                                    class="heart-title btn btn-sm btn-outline-dark"><i
                                                         class="far fa-thumbs-up"></i></a>
-                                                <a href="cart.html" title="В корзину"
-                                                    class="btn btn-sm btn-outline-dark"><i
+                                                <a href="#" title="В корзину"
+                                                    class="cart-title btn btn-sm btn-outline-dark"><i
                                                         class="fas fa-shopping-cart"></i></a>
                                                 <a href="detail.html" title="Подробнее"
                                                     class="btn btn-sm btn-outline-dark"><i
@@ -170,11 +207,11 @@
                                     <div class="card-overlay">
                                         <ul class="list-inline">
                                             <li class="li-inline">
-                                                <a href="like.html" title="Нравится"
-                                                    class="btn btn-sm btn-outline-dark"><i
+                                                <a href="#" title="Нравится"
+                                                    class="heart-title btn btn-sm btn-outline-dark"><i
                                                         class="far fa-thumbs-up"></i></a>
-                                                <a href="cart.html" title="В корзину"
-                                                    class="btn btn-sm btn-outline-dark"><i
+                                                <a href="#" title="В корзину"
+                                                    class="cart-title btn btn-sm btn-outline-dark"><i
                                                         class="fas fa-shopping-cart"></i></a>
                                                 <a href="detail.html" title="Подробнее"
                                                     class="btn btn-sm btn-outline-dark"><i
@@ -197,11 +234,11 @@
                                     <div class="card-overlay">
                                         <ul class="list-inline">
                                             <li class="li-inline">
-                                                <a href="like.html" title="Нравится"
-                                                    class="btn btn-sm btn-outline-dark"><i
+                                                <a href="#" title="Нравится"
+                                                    class="heart-title btn btn-sm btn-outline-dark"><i
                                                         class="far fa-thumbs-up"></i></a>
-                                                <a href="cart.html" title="В корзину"
-                                                    class="btn btn-sm btn-outline-dark"><i
+                                                <a href="#" title="В корзину"
+                                                    class="cart-title btn btn-sm btn-outline-dark"><i
                                                         class="fas fa-shopping-cart"></i></a>
                                                 <a href="detail.html" title="Подробнее"
                                                     class="btn btn-sm btn-outline-dark"><i
@@ -224,11 +261,11 @@
                                     <div class="card-overlay">
                                         <ul class="list-inline">
                                             <li class="li-inline">
-                                                <a href="like.html" title="Нравится"
-                                                    class="btn btn-sm btn-outline-dark"><i
+                                                <a href="#" title="Нравится"
+                                                    class="heart-title btn btn-sm btn-outline-dark"><i
                                                         class="far fa-thumbs-up"></i></a>
-                                                <a href="cart.html" title="В корзину"
-                                                    class="btn btn-sm btn-outline-dark"><i
+                                                <a href="#" title="В корзину"
+                                                    class="cart-title btn btn-sm btn-outline-dark"><i
                                                         class="fas fa-shopping-cart"></i></a>
                                                 <a href="detail.html" title="Подробнее"
                                                     class="btn btn-sm btn-outline-dark"><i
@@ -251,11 +288,11 @@
                                     <div class="card-overlay">
                                         <ul class="list-inline">
                                             <li class="li-inline">
-                                                <a href="like.html" title="Нравится"
-                                                    class="btn btn-sm btn-outline-dark"><i
+                                                <a href="#" title="Нравится"
+                                                    class="heart-title btn btn-sm btn-outline-dark"><i
                                                         class="far fa-thumbs-up"></i></a>
-                                                <a href="cart.html" title="В корзину"
-                                                    class="btn btn-sm btn-outline-dark"><i
+                                                <a href="#" title="В корзину"
+                                                    class="cart-title btn btn-sm btn-outline-dark"><i
                                                         class="fas fa-shopping-cart"></i></a>
                                                 <a href="detail.html" title="Подробнее"
                                                     class="btn btn-sm btn-outline-dark"><i
@@ -278,15 +315,15 @@
                                     <div class="card-overlay">
                                         <ul class="list-inline">
                                             <li class="li-inline">
-                                                <a href="like.html" title="Нравится"
-                                                    class="btn btn-sm btn-outline-dark"><i
-                                                        class="far fa-thumbs-up"></i></a>
-                                                <a href="cart.html" title="В корзину"
-                                                    class="btn btn-sm btn-outline-dark"><i
-                                                        class="fas fa-shopping-cart"></i></a>
+                                                <a href="#" title="Нравится"
+                                                    class="heart-title btn btn-sm btn-outline-dark"><i
+                                                    class="far fa-thumbs-up"></i></a>
+                                                <a href="#" title="В корзину"
+                                                    class="cart-title btn btn-sm btn-outline-dark"><i
+                                                    class="fas fa-shopping-cart"></i></a>
                                                 <a href="detail.html" title="Подробнее"
                                                     class="btn btn-sm btn-outline-dark"><i
-                                                        class="fas fa-info-circle"></i></a>
+                                                    class="fas fa-info-circle"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -305,11 +342,11 @@
                                     <div class="card-overlay">
                                         <ul class="list-inline">
                                             <li class="li-inline">
-                                                <a href="like.html" title="Нравится"
-                                                    class="btn btn-sm btn-outline-dark"><i
+                                                <a href="#" title="Нравится"
+                                                    class="heart-title btn btn-sm btn-outline-dark"><i
                                                         class="far fa-thumbs-up"></i></a>
-                                                <a href="cart.html" title="В корзину"
-                                                    class="btn btn-sm btn-outline-dark"><i
+                                                <a href="#" title="В корзину"
+                                                    class="cart-title btn btn-sm btn-outline-dark"><i
                                                         class="fas fa-shopping-cart"></i></a>
                                                 <a href="detail.html" title="Подробнее"
                                                     class="btn btn-sm btn-outline-dark"><i
@@ -432,6 +469,7 @@
             </form>
         </div>
     </div>
+    <script src="js/likes.js"></script>
 </body>
 
 </html>

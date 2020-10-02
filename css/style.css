@@ -219,10 +219,6 @@ color: var(--primary-color5);
      opacity: 0;
      transform: all 0.3s;
 }
-.card-overlay ul li{
-    
-}
-
 .card:hover .card-overlay{
     width: 100%;
     position: absolute;
@@ -514,6 +510,9 @@ img {
 }
 .justify-content-end {
     justify-content: flex-end !important;
+}
+.justify-content-around {
+    justify-content: space-around !important;
 }
 .align-items-end {
     align-items: flex-end !important;
