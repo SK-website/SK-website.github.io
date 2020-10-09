@@ -160,14 +160,9 @@ function renderCart() {
             let btnCartId = event.target.getAttribute('data-id');
             console.log(btnCartId);
             btnClassRemove(btnCartId);
-            /*let btnCartId = event.target.closest('.btn-cart').classList.remove('added');*/
             cart = filterItem(cart, event.target);
             cartItems.removeChild(event.target.parentElement.parentElement.parentElement);
-            
-            /*let btnCarts=document.querySelectorAll('.btn-cart');
-            for(let btnCart of btnCarts) {
-                btnCart.classList.remove('added');
-            }*/
+             
         } else if (event.target.classList.contains('fa-caret-right')) {
             console.log(event.target);
             let tmp = findItem(cart, event.target);
@@ -206,8 +201,8 @@ for (let i=0; i<hearts.length; i++) {
             heartTitles[i].title=":-( Больше не нравится";
         }
         hearts[i].classList.toggle('added-like');
-    })
-};
+        })
+    };
 };
 
 //open/close sidebar
