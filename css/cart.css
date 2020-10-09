@@ -4,7 +4,14 @@
 .added{
     border: 2px solid transparent ;
     border-radius: 50%;
-    color: rgb(182, 158, 158)
+    color: rgb(182, 158, 158);
+    pointer-events: none;
+  }
+
+.added-like{
+    border: 2px solid transparent ;
+    border-radius: 50%;
+    color: rgb(182, 158, 158);
 }
 
 .sidebar {
@@ -81,7 +88,7 @@ align-content: start;
     padding-left: 0.8rem;
 }
 .cart-item .picture{
-    max-width: 200px;
+    max-width: 150px;
     margin-right: 2rem;
    
 }
@@ -112,6 +119,7 @@ align-content: start;
     font-weight: 800;
     padding-left: 2px;
 }
+
 /*
 .subtotal::before{
     margin-right: 5px;

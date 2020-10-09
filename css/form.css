@@ -85,3 +85,21 @@
     color: var(--primary-color4);
     font-size: 1rem;
 }
+.over{
+    position: fixed;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(4, 10, 30, 0.5);
+    z-index: 10;
+    transform: all 0.5s ease-out;
+    transition-delay: 0,2s;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+.over.active{
+    visibility: visible;
+}
