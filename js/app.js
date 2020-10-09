@@ -107,9 +107,7 @@ function addProductToCart() {
             +(addToCart.textContent)++;
             button.title="Уже в корзине";
             button.classList.add('added');
-            
-             
-            
+                        
             subtotals()
         })
     })
@@ -177,10 +175,12 @@ function renderCart() {
             tmp.amount = tmp.amount -1;
                 if (tmp.amount > 0) {
                 event.target. nextElementSibling.innerText = tmp.amount;
-            } else {
-            cart = filterItem(cart, event.target);
-            cartItems.removeChild(event.target.parentElement.parentElement.parentElement)
-            }
+                } else {
+                    let btnCartId = event.target.getAttribute('data-id');
+                    btnClassRemove(btnCartId);
+                    cart = filterItem(cart, event.target);
+                    cartItems.removeChild(event.target.parentElement.parentElement.parentElement);
+                    };
         subtotals();    
         }
          
