@@ -5,7 +5,8 @@ const products = [
     name: 'Сирень',
     author: 'Прохоров В.',
     price: 300,
-    },
+    category: 'натюрморт'
+},
 
     {
     id: 2,
@@ -13,6 +14,7 @@ const products = [
     name: 'Причал',
     author: 'Городилов А.',
     price: 250,
+    category: 'пейзаж'
     },
 
     {
@@ -21,6 +23,7 @@ const products = [
     name: 'Параплан',
     author: 'Паршин А.',
     price: 100,
+    category: 'пейзаж'
     },
 
     {
@@ -29,6 +32,7 @@ const products = [
     name: 'Летний букет',
     author: 'Домар Вонас',
     price: 70,
+    category: 'натюрморт'
     },
 
     {
@@ -37,6 +41,7 @@ const products = [
     name: 'Причал',
     author: 'Школа Григоряна В.',
     price: 100,
+    category: 'пейзаж'
     },
 
     {
@@ -45,6 +50,7 @@ const products = [
     name: 'Река Ижь',
     author: 'Городилов А., Городилова Н.',
     price: 410,
+    category: 'пейзаж'
     },
 
     {
@@ -53,6 +59,7 @@ const products = [
     name: 'Середина лета',
     author: 'Городилов А.',
     price: 210,
+    category: 'пейзаж'
     },
 
     
@@ -62,5 +69,6 @@ const products = [
     name: 'Букет',
     author: 'Прохоров В.',
     price: 250,
+    category: 'натюрморт'
     },
 ]
