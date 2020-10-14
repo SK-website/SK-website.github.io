@@ -1,46 +1,94 @@
 "use strict"
 
+class Storage {
+    static saveProducts(products){
+       localStorage.setItem('products', JSON.stringify(products));
+    } 
+
+    static saveCart(cart){
+        localStorage.setItem('basket', JSON.stringify(cart));
+    }
+
+    //методы, которые читают из LS
+
+    static getProduct(id){
+        let products = JSON.parse(localStorage.getItem('products'));
+        return products.find(product=>product.id===+(id));
+    }
+
+    static getProducts(){
+        return JSON.parse(localStorage.getItem('products'));
+    }
+    
+    static getCart(cart){
+        return localStorage.getItem("basket")?JSON.parse(localStorage.getItem("basket")): [];
+    } 
+ 
+}
+class Product {
+    getProducts(products){
+    return products.map(item =>{
+        const name = item.name;
+        const price = item.price;
+        const id = item.id;
+        const image = item.image;
+        const author = item.author;
+        return {id, name, price, image, author};
+        });
+    }
+}
+
+ 
 class App {
     cart = [];
     cartItems = document.querySelector('.cart-items');
     clearCart = document.querySelector('.clear-cart');
+    sidebar = document.querySelector('.sidebar');
+    cartTotal = document.querySelector('.cart-total');  
+    addToCart = document.querySelector('.to-cart');
 
     //магические методы (конструктор)
     constructor() {
-        const sidebar = document.querySelector('.sidebar');
+        
         const sidebarOpen = document.querySelector('.fa-shopping-basket');
         const closeBtn = document.querySelector('.close-btn');
         
         //open/close sidebar
-        sidebarOpen.addEventListener ('click', () => {
-            document.querySelector('.over').classList.add('active');
-            sidebar.classList.toggle('show-sidebar');
-            this.subtotals();
-            console.log(this);
-        });
-    
-        closeBtn.addEventListener('click', () => {
-            document.querySelector('.over').classList.remove('active');
-            sidebar.classList.toggle('show-sidebar');
-            }); 
-          
-        this.makeShowcase(products);
-    };
+        sidebarOpen.addEventListener('click', () => this.openCart());
+        
+        closeBtn.addEventListener('click', () => this.closeCart());
+        
 
-    //Cтроим каталог
-    makeShowcase(products){ 
-        let result = '';
-    
-        products.forEach(item => result+=this.createProduct(item));
-        document.querySelector('.showcase').innerHTML=result;
+               
+        let data = new Product();
+        Storage.saveProducts(data.getProducts(products));
+        this.makeShowcase(Storage.getProducts());
+        this.cart = Storage.getCart();
+        console.log(this.cart);
     };
 
     getProduct(id){
         return products.find(product => product.id===+(id));
     };
 
-
-
+    //Cтроим каталог
+    makeShowcase(products){ 
+        let result = '';
+        products.forEach(item => result+=this.createProduct(item));
+        document.querySelector('.showcase').innerHTML=result;
+    };
+    openCart(){
+        document.querySelector('.over').classList.add('active');
+        this.sidebar.classList.toggle('show-sidebar');
+        this.cartItems.innerHTML='';
+        this.cart = Storage.getCart();
+        this.populateCart(this.cart);
+        this.setCartTotal(this.cart);
+    }
+    closeCart() {
+        document.querySelector('.over').classList.remove('active');
+        this.sidebar.classList.toggle('show-sidebar');
+    }
     //Шаблонные строки (для создания карточки товара) обратные кавычки ``
     createProduct(data) {
         return `
@@ -66,30 +114,22 @@ class App {
                 </div>
                 <section class="section-style">
                     <h4 class="product-name">${data.name}</h4>
-                    <p class="product-price small text-muted">${data.price}</p>
+                    <p class="product-price small text-muted">$${data.price}</p>
                     <p class="author small text-muted">${data.author}</p>
                 </section>
             </div>
         </div>
         `
     };
-
-    //Субтотал
-    subtotals(){
-        let itemsInCart = document.querySelectorAll('.cart-item');
-            for (let item of itemsInCart){
-                let price = item.querySelector('.product-price').textContent;
-                let amount = item.querySelector('.amount').textContent;
-                item.querySelector('.product-subtotal').textContent = price*amount;
-            }
-    };
+    populateCart(cart){
+        cart.forEach(item => this.createCartItem(item));
+    }
 
     //Добавление товарав в корзину через шаблонные строки
     createCartItem(item) {
     const div = document.createElement('div');
     div.className = "cart-item";
     div.setAttribute("id", item.id);
-
     div.innerHTML =
     `
             <div class="picture product-img">
@@ -119,7 +159,7 @@ class App {
 
     //Добавление товара в корзину
     addProductToCart() {
-        const addToCart = document.querySelector('.to-cart');
+       
         const addToCartButtons = [...document.querySelectorAll('.btn-cart')];
             addToCartButtons.forEach(button => {
             button.addEventListener('click', event =>{
@@ -128,36 +168,32 @@ class App {
                 let cartItem = {...this.getProduct(event.target.closest('.card').getAttribute('data-id')), amount: 1}
                 console.log(cartItem);
                 this.cart = [...this.cart, cartItem];
-                this.createCartItem(cartItem);
-                +(addToCart.textContent)++;
+                +(this.addToCart.textContent)++;
                 console.log(button.title);
                 button.setAttribute('disabled', 'disabled');
                 button.title="Уже в корзине";
-                //console.log(button.title);
-                //button.classList.add('added');
-                          
-                this.subtotals()
+
+                Storage.saveCart(this.cart);          
+                this.setCartTotal (this.cart);
+             
             })
         })
     };
     clearAll(){
-        const addToCart = document.querySelector('.to-cart');
         this.cart = [];
         while(this.cartItems.children.length>0){
             this.cartItems.removeChild(this.cartItems.children[0]);
-            addToCart.textContent='0';
+            this.addToCart.textContent='0';
         } 
-        this.subtotals();
-        let btnCarts=document.querySelectorAll('.btn-cart');
-        for(let btnCart of btnCarts) {
-            btnCart.classList.remove('added');
-        }
+        //TODO удаление блокировки кнопки "в корзину"
+        this.setCartTotal (this.cart); 
+        Storage.saveCart(this.cart);
+                
     };
 
     filterItem = (cart, filteredItem) => cart.filter(item => item.id != 
         +(filteredItem.dataset.id));
-    
-        
+       
     findItem = (cart, findingItem) => cart.find(item => item.id === 
         +(findingItem.dataset.id));
 
@@ -173,33 +209,35 @@ class App {
            
     renderCart() {
         //очистка всей корзины
-        const addToCart = document.querySelector('.to-cart');
         this.clearCart.addEventListener('click', () => this.clearAll());
+
         this.cartItems.addEventListener('click', event => {
-                    
             if(event.target.classList.contains('fa-trash-alt')) {
                 console.log(event.target);
                 let itemAmount = this.findItem(this.cart, event.target);
-                addToCart.textContent = +addToCart.textContent - itemAmount.amount;
+                this.addToCart.textContent = +this.addToCart.textContent - itemAmount.amount;
                 let btnCartId = event.target.getAttribute('data-id');
                 console.log(btnCartId);
                 this.btnRemoveAttribute(btnCartId);
                 this.cart = this.filterItem(this.cart, event.target);
                 this.cartItems.removeChild(event.target.parentElement.parentElement.parentElement);
-                         
+                Storage.saveCart(this.cart);
+                this.setCartTotal (this.cart);     
                 } else if (event.target.classList.contains('fa-caret-right')) {
                     console.log(event.target);
                     let tmp = this.findItem(this.cart, event.target);
                     console.log(tmp);
                     tmp.amount = tmp.amount + 1;
                     console.log(tmp.amount);
-                    +(addToCart.textContent)++;
+                    +(this.addToCart.textContent)++;
                     event.target.previousElementSibling.innerText = tmp.amount;
-                    this.subtotals();
-                } else if (event.target.classList.contains('fa-caret-left')) {
+                    Storage.saveCart(this.cart);
+                    this.setCartTotal (this.cart);
+                } else if (event.target.classList.contains('fa-caret-left')){
                     let tmp = this.findItem(this.cart, event.target);
-                    +(addToCart.textContent)--;
+                    +(this.addToCart.textContent)--;
                     tmp.amount = tmp.amount -1;
+                    Storage.saveCart(this.cart);
                         if (tmp.amount > 0) {
                         event.target. nextElementSibling.innerText = tmp.amount;
                         } else {
@@ -208,10 +246,27 @@ class App {
                             this.cart = this.filterItem(this.cart, event.target);
                             this.cartItems.removeChild(event.target.parentElement.parentElement.parentElement);
                             };
-                    this.subtotals();    
-                    }
-                     
+                    this.setCartTotal (this.cart);
+                    Storage.saveCart(this.cart);
+                }
         });
+    };
+//Total and Subtotal
+    setCartTotal(cart) {
+        let itemsInCart = document.querySelectorAll('.cart-item');
+        for (let item of itemsInCart){
+            let price = item.querySelector('.product-price').textContent;
+            let amount = item.querySelector('.amount').textContent;
+            item.querySelector('.product-subtotal').textContent = "("+price*amount+")";
+        }
+        let tempTotal = 0;
+        let itemsTotal = 0;
+        cart.map(item => {
+          tempTotal += item.price * item.amount;
+          itemsTotal += item.amount;
+        });
+        this.cartTotal.textContent = parseFloat(tempTotal.toFixed(2));
+        this.addToCart.textContent = itemsTotal;
     };
 
     heartsCount = function (){
@@ -229,44 +284,15 @@ class App {
                     heartTitles[i].title=":-( Больше не нравится";
                 }
                 hearts[i].classList.toggle('added');
-                });
-            };
+            });
         };
-        
-    
-};
-
-(function (){ 
-    const app = new App();
-
-    app.addProductToCart ();
-    app.renderCart();
-    app.heartsCount();
-   
-})();
-
-//ООП классы JS
-/*class Product{
-    getProducts(){
-        return products.map(item=>{
-            const name = item.name;
-            const price = item.price;
-            const id = item.id;
-            const image = item.image;
-            return {id,name,price,image};
-        });
     }
-};
 
-
-makeShowcase(products){
-    let result = '';
-    products.forEach(function (item) {
-        result+=createProducnt(item);
-    });
 }
+(function(){
+const app = new App();
 
-let data = new Product();
-Storage.saveProducts(data.getPRoducts(products));
-this.makeShowcase(Storage.getProducts());*/
-
+app.addProductToCart();
+app.renderCart();
+app.heartsCount();
+})();
