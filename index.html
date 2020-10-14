@@ -27,7 +27,7 @@
                     <div class="navbar-links brackets">
                         <ul class="navbar-nav">
                             <li><a href="index.html">Главная</a></li>
-                            <li><a href="shop.html">В Галерею</a></li>
+                            <li><a href="shop-dz2.html">В Галерею</a></li>
                             <li><a href="about.html">О нас</a></li>
                             <li><a href="blog.html">Блог</a></li>
                             <li><a href="contact.html">Контакты</a></li>
@@ -57,252 +57,37 @@
                     </div>
                 </div>
             </article>
+    <!--модальное окно при работе с корзиной-->
+    <div class="over"></div>
+    <!--Корзина-->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <button class="close-btn"><i class="fas fa-times"></i></button>
+            <h5 class="logo">Ваша корзина</h5>
+        </div>
+        
+        <div class="cart-items">
+        </div>
+        <div class="cart-footer">
+            <h3>Итого: $<span class="cart-total">0</span></h3>
+            <button class="clear-cart">Очистить корзину</button>
+        </div>
+    </aside>
 
 
         </section>
         <!--Категории new-->
-        <div class="row  categories-collection">
-            <div class="col-md-4">
-                <a href="category1.html" class="category-item">
-                    <img src="images/07.jpg" class="img-fluid-1">
-                    <strong class="category-item-title">Живопись</strong>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="category2.html" class="category-item">
-                    <img src="images/03.jpg" class="img-fluid-1">
-                    <strong class="category-item-title">Графика</strong>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="category3.html" class="category-item">
-                    <img src="images/06.jpg" class="img-fluid-1">
-                    <strong class="category-item-title">Другие техники</strong>
-                </a>
-            </div>
+        <header>
+            <h3 class="mt-3">КАТЕГОРИИ</h3>
+        </header>
+        <div class="row categories-collections">
         </div>
         <div class="row product">
             <section>
                     <header>
                         <h3 class="mt-3">НОВЫЕ ПОСТУПЛЕНИЯ</h3>
                     </header>
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card text-center">
-                                <div class="position-relative mb-3">
-                                    <img src="images/01.jpg" class="img-fluid">
-                                    <div class="card-overlay">
-                                        <ul class="list-inline">
-                                            <li class="li-inline">
-                                                <a href="#" title="Нравится"
-                                                    class="heart-title btn btn-sm btn-outline-dark"><i
-                                                        class="far fa-thumbs-up"></i></a>
-                                                <a href="#" title="В корзину"
-                                                    class="cart-title btn btn-sm btn-outline-dark"><i
-                                                        class="fas fa-shopping-cart"></i></a>
-                                                <a href="detail.html" title="Подробнее"
-                                                    class="btn btn-sm btn-outline-dark"><i
-                                                        class="fas fa-info-circle"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <section class="section-style">
-                                    <h4>Букет</h4>
-                                    <p class="small-text-muted">$300</p>
-                                    <p class="small-text-muted">Прохоров В.</p>
-                                </section>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card text-center">
-                                <div class="position-relative mb-3">
-                                    <img src="images/15.jpg" class="img-fluid">
-                                    <div class="card-overlay">
-                                        <ul class="list-inline">
-                                            <li class="li-inline">
-                                                <a href="#" title="Нравится"
-                                                    class="heart-title btn btn-sm btn-outline-dark"><i
-                                                        class="far fa-thumbs-up"></i></a>
-                                                <a href="#" title="В корзину"
-                                                    class="cart-title btn btn-sm btn-outline-dark"><i
-                                                            class="fas fa-shopping-cart"></i></a>
-                                                <a href="detail.html" title="Подробнее"
-                                                    class="btn btn-sm btn-outline-dark"><i
-                                                        class="fas fa-info-circle"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <section class="section-style">
-                                    <h4>Причал</h4>
-                                    <p class="small-text-muted">$150</p>
-                                    <p class="small-text-muted">Городилов А.</p>
-                                </section>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card text-center">
-                                <div class="position-relative mb-3">
-                                    <img src="images/14.jpg" class="img-fluid">
-                                    <div class="card-overlay">
-                                        <ul class="list-inline">
-                                            <li class="li-inline">
-                                                <a href="#" title="Нравится"
-                                                    class="heart-title btn btn-sm btn-outline-dark"><i
-                                                        class="far fa-thumbs-up"></i></a>
-                                                <a href="#" title="В корзину"
-                                                    class="cart-title btn btn-sm btn-outline-dark"><i
-                                                        class="fas fa-shopping-cart"></i></a>
-                                                <a href="detail.html" title="Подробнее"
-                                                    class="btn btn-sm btn-outline-dark"><i
-                                                        class="fas fa-info-circle"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <section class="section-style">
-                                    <h4>Параплан</h4>
-                                    <p class="small-text-muted">$100</p>
-                                    <p class="small-text-muted">Паршин А.</p>
-                                </section>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card text-center">
-                                <div class="position-relative mb-3">
-                                    <img src="images/13.jpg" class="img-fluid">
-                                    <div class="card-overlay">
-                                        <ul class="list-inline">
-                                            <li class="li-inline">
-                                                <a href="#" title="Нравится"
-                                                    class="heart-title btn btn-sm btn-outline-dark"><i
-                                                        class="far fa-thumbs-up"></i></a>
-                                                <a href="#" title="В корзину"
-                                                    class="cart-title btn btn-sm btn-outline-dark"><i
-                                                        class="fas fa-shopping-cart"></i></a>
-                                                <a href="detail.html" title="Подробнее"
-                                                    class="btn btn-sm btn-outline-dark"><i
-                                                        class="fas fa-info-circle"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <section class="section-style">
-                                    <h4>Летний букет</h4>
-                                    <p class="small-text-muted">$70</p>
-                                    <p class="small-text-muted">Домар Вонас</p>
-                                </section>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card text-center">
-                                <div class="position-relative mb-3">
-                                    <img src="images/12.jpg" class="img-fluid">
-                                    <div class="card-overlay">
-                                        <ul class="list-inline">
-                                            <li class="li-inline">
-                                                <a href="#" title="Нравится"
-                                                    class="heart-title btn btn-sm btn-outline-dark"><i
-                                                        class="far fa-thumbs-up"></i></a>
-                                                <a href="#" title="В корзину"
-                                                    class="cart-title btn btn-sm btn-outline-dark"><i
-                                                        class="fas fa-shopping-cart"></i></a>
-                                                <a href="detail.html" title="Подробнее"
-                                                    class="btn btn-sm btn-outline-dark"><i
-                                                        class="fas fa-info-circle"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <section class="section-style">
-                                    <h4>Причал</h4>
-                                    <p class="small-text-muted">$70</p>
-                                    <p class="small-text-muted">Школа Григоряна В.</p>
-                                </section>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card text-center">
-                                <div class="position-relative mb-3">
-                                    <img src="images/16.jpg" class="img-fluid">
-                                    <div class="card-overlay">
-                                        <ul class="list-inline">
-                                            <li class="li-inline">
-                                                <a href="#" title="Нравится"
-                                                    class="heart-title btn btn-sm btn-outline-dark"><i
-                                                        class="far fa-thumbs-up"></i></a>
-                                                <a href="#" title="В корзину"
-                                                    class="cart-title btn btn-sm btn-outline-dark"><i
-                                                        class="fas fa-shopping-cart"></i></a>
-                                                <a href="detail.html" title="Подробнее"
-                                                    class="btn btn-sm btn-outline-dark"><i
-                                                        class="fas fa-info-circle"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <section class="section-style">
-                                    <h4>Река Ижь</h4>
-                                    <p class="small-text-muted">$410</p>
-                                    <p class="small-text-muted">Городилов А., Городилова Н.</p>
-                                </section>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card text-center">
-                                <div class="position-relative mb-3">
-                                    <img src="images/17.jpg" class="img-fluid">
-                                    <div class="card-overlay">
-                                        <ul class="list-inline">
-                                            <li class="li-inline">
-                                                <a href="#" title="Нравится"
-                                                    class="heart-title btn btn-sm btn-outline-dark"><i
-                                                        class="far fa-thumbs-up"></i></a>
-                                                <a href="#" title="В корзину"
-                                                    class="cart-title btn btn-sm btn-outline-dark"><i
-                                                        class="fas fa-shopping-cart"></i></a>
-                                                <a href="detail.html" title="Подробнее"
-                                                    class="btn btn-sm btn-outline-dark"><i
-                                                        class="fas fa-info-circle"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <section class="section-style">
-                                    <h4>Середина лета</h4>
-                                    <p class="small-text-muted">$210</p>
-                                    <p class="small-text-muted">Городилов А.</p>
-                                </section>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card text-center">
-                                <div class="position-relative mb-3">
-                                    <img src="images/02.jpg" class="img-fluid">
-                                    <div class="card-overlay">
-                                        <ul class="list-inline">
-                                            <li class="li-inline">
-                                                <a href="#" title="Нравится"
-                                                    class="heart-title btn btn-sm btn-outline-dark"><i
-                                                        class="far fa-thumbs-up"></i></a>
-                                                <a href="#" title="В корзину"
-                                                    class="cart-title btn btn-sm btn-outline-dark"><i
-                                                        class="fas fa-shopping-cart"></i></a>
-                                                <a href="detail.html" title="Подробнее"
-                                                    class="btn btn-sm btn-outline-dark"><i
-                                                        class="fas fa-info-circle"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <section class="section-style">
-                                    <h4>Сирень</h4>
-                                    <p class="small-text-muted">$250</p>
-                                    <p class="small-text-muted">Прохоров В.</p>
-                                </section>
-                            </div>
-                        </div>
+                    <div class="row showcase">
                     </div>
                 </section>
             </div>
@@ -408,8 +193,8 @@
             </form>
         </div>
     </div>
-    <script src="js/data.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/data-dz2.js"></script>
+    <script src="js/app-dz2index.js"></script>
 </body>
 
 </html>

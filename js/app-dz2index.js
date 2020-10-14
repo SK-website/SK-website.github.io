@@ -55,11 +55,15 @@ class App {
         
         //open/close sidebar
         sidebarOpen.addEventListener('click', () => this.openCart());
-        
         closeBtn.addEventListener('click', () => this.closeCart());
-        
 
-               
+        if(document.querySelector('.categories-collections')) {
+            this.makeCategories(categories);
+            let t = document.querySelectorAll('.img-fluid-1')
+            console.log(t);
+        }
+        
+        
         let data = new Product();
         Storage.saveProducts(data.getProducts(products));
         this.makeShowcase(Storage.getProducts());
@@ -129,7 +133,7 @@ class App {
     createCartItem(item) {
     const div = document.createElement('div');
     div.className = "cart-item";
-    div.setAttribute("id", item.id);
+    div.setAttribute("id", 'id'+item.id);
     div.innerHTML =
     `
             <div class="picture product-img">
@@ -172,15 +176,12 @@ class App {
                 console.log(button.title);
                 button.setAttribute('disabled', 'disabled');
                 button.title="Уже в корзине";
-
-                Storage.saveCart(this.cart);          
-                this.setCartTotal (this.cart);
-             
+                Storage.saveCart(this.cart);
             })
         })
     };
     clearAll(){
-        this.cart = [];
+        this.cart = []; 
         while(this.cartItems.children.length>0){
             this.cartItems.removeChild(this.cartItems.children[0]);
             this.addToCart.textContent='0';
@@ -222,7 +223,9 @@ class App {
                 this.cart = this.filterItem(this.cart, event.target);
                 this.cartItems.removeChild(event.target.parentElement.parentElement.parentElement);
                 Storage.saveCart(this.cart);
-                this.setCartTotal (this.cart);     
+                this.setCartTotal (this.cart); 
+                console.log(this.cartTotal.textContent); 
+                console.log(this);  
                 } else if (event.target.classList.contains('fa-caret-right')) {
                     console.log(event.target);
                     let tmp = this.findItem(this.cart, event.target);
@@ -233,6 +236,9 @@ class App {
                     event.target.previousElementSibling.innerText = tmp.amount;
                     Storage.saveCart(this.cart);
                     this.setCartTotal (this.cart);
+                    console.log(this);
+                    console.log(this.cartTotal.textContent);
+                    
                 } else if (event.target.classList.contains('fa-caret-left')){
                     let tmp = this.findItem(this.cart, event.target);
                     +(this.addToCart.textContent)--;
@@ -253,21 +259,26 @@ class App {
     };
 //Total and Subtotal
     setCartTotal(cart) {
-        let itemsInCart = document.querySelectorAll('.cart-item');
+        /*let itemsInCart = document.querySelectorAll('.cart-item');
         for (let item of itemsInCart){
             let price = item.querySelector('.product-price').textContent;
             let amount = item.querySelector('.amount').textContent;
-            item.querySelector('.product-subtotal').textContent = "("+price*amount+")";
-        }
-        let tempTotal = 0;
-        let itemsTotal = 0;
-        cart.map(item => {
-          tempTotal += item.price * item.amount;
-          itemsTotal += item.amount;
+            item.querySelector('.product-subtotal').textContent = '('+price*amount+')';
+        }*/
+        let tmpTotal = '0';
+        console.log(this);
+        this.cart.map(item=>{
+            tmpTotal = item.price*item.amount;
+            this.cartItems.querySelector(`#id${item.id} .product-subtotal`).textContent = 
+            parseFloat(tmpTotal.toFixed(2));
+
         });
-        this.cartTotal.textContent = parseFloat(tempTotal.toFixed(2));
-        this.addToCart.textContent = itemsTotal;
+       
+        this.cartTotal.textContent = parseFloat(this.cart.reduce((previous, current) => 
+        previous + current.price*current.amount, 0).toFixed(2));
+        this.addToCart.textContent = this.cart.reduce((previous, current) =>previous+current.amount,0);
     };
+
 
     heartsCount = function (){
         const likesTotal = document.querySelector('.like-me');    
@@ -288,7 +299,25 @@ class App {
         };
     }
 
+    createCategory(category){
+    return`
+    <a href="#" class="category-item" data-category=${category.name}>
+    <img src="${category.image}" alt="Фото товара" class="img-fluid-1">
+    <strong class="category-item-title" data-category=${category.name}>${category.name}</strong>
+    </a>`;
 }
+    makeCategories(categories){
+        for (let i=0; i<3; i++){
+        let div = document.createElement('div');
+        div.className = "col-md-4";
+        div.innerHTML=this.createCategory(categories[i]);
+        document.querySelector('.categories-collections').append(div);
+
+
+        }
+    }
+}
+
 (function(){
 const app = new App();
 
