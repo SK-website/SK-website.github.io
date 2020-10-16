@@ -7,7 +7,7 @@
 
 :root {
     --primary-color1: hsl(240, 41%, 97%);
-    --primary-color2: hsl(221, 71%, 80%);
+    --primary-color5: hsl(221, 71%, 80%);
     --primary-color6: hsl(0, 11%, 86%);
     --primary-color3: black;
     --primary-color4: hsl(51, 96%, 51%);
@@ -137,9 +137,9 @@ nav {
 .categories{
     text-align: auto;
 }
-.categories a{
+.categories link a {
     text-decoration: none;
-    color: var(--primary-color3--);
+    color: var(--primary-color5);
 }
 .categories a:hover{
     color: var(--primary-color4);
@@ -147,7 +147,14 @@ nav {
 .category-item {
     display: block;
     position: relative;
-    color: var(--primary-color3);
+    color: var(--primary-color5);
+    font-size: 1rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.categories-list{
+    color: var(--primary-color5);
 }
   
 .category-item-title {
@@ -242,14 +249,14 @@ color: var(--primary-color5);
 }
  .reset-anchor {
     color: inherit;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .reset-anchor:hover,
 .reset-anchor:focus {
     text-decoration: none;
     color: var(--primary-color4);
-    text-align: center;
+    
 }
 .btn {
     color: #212529;
@@ -290,7 +297,7 @@ img {
 }
 
 .list-unstyled li a {
-    color: var(--primary-color3);
+    
     text-decoration: none;
 }
 .li-inline {
@@ -339,7 +346,7 @@ img {
 }
 .footer-link {
     font-size: 0.9rem;
-    color: var(--primary-color4);
+    color: var(--primary-color3);
 }
 
 .footer-link:hover,
@@ -348,6 +355,11 @@ img {
     color: var(--primary-color4);
     text-decoration: none;
     
+}
+
+.py-1{
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
 }
 .pt-2,
 .py-2 {

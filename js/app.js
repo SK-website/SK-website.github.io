@@ -33,7 +33,8 @@ class Product {
         const id = item.id;
         const image = item.image;
         const author = item.author;
-        return {id, name, price, image, author};
+        const category = item.category;
+        return {id, name, price, image, author, category};
         });
     }
 }
@@ -57,10 +58,8 @@ class App {
         sidebarOpen.addEventListener('click', () => this.openCart());
         closeBtn.addEventListener('click', () => this.closeCart());
 
-        if(document.querySelector('.categories-collections')) {
+        if(document.querySelector('.collections')) {
             this.makeCategories(categories);
-            let t = document.querySelectorAll('.img-fluid-1')
-            console.log(t);
         }
         
         
@@ -154,9 +153,9 @@ class App {
                 </div>
             </div> 
             <div class="price">
-                $ <span class="product-price">${item.price}</span>
-                <span class="product-subtotal"></span>
-            </div>
+                <span class="product-price bold">$${item.price}</span>
+                <span class="product-subtotal bold"></span>
+            </div>   
     `
     this.cartItems.append(div);
     };
@@ -216,12 +215,12 @@ class App {
             if(event.target.classList.contains('fa-trash-alt')) {
                 console.log(event.target);
                 let itemAmount = this.findItem(this.cart, event.target);
-                this.addToCart.textContent = +this.addToCart.textContent - itemAmount.amount;
                 let btnCartId = event.target.getAttribute('data-id');
                 console.log(btnCartId);
                 this.btnRemoveAttribute(btnCartId);
                 this.cart = this.filterItem(this.cart, event.target);
-                this.cartItems.removeChild(event.target.parentElement.parentElement.parentElement);
+                event.target.closest('.cart-item').remove();
+                //this.cartItems.removeChild(event.target.parentElement.parentElement.parentElement);
                 Storage.saveCart(this.cart);
                 this.setCartTotal (this.cart); 
                 console.log(this.cartTotal.textContent); 
@@ -241,16 +240,15 @@ class App {
                     
                 } else if (event.target.classList.contains('fa-caret-left')){
                     let tmp = this.findItem(this.cart, event.target);
-                    +(this.addToCart.textContent)--;
-                    tmp.amount = tmp.amount -1;
                     Storage.saveCart(this.cart);
-                        if (tmp.amount > 0) {
-                        event.target. nextElementSibling.innerText = tmp.amount;
+                    if (tmp!==undefined && tmp.amount > 1) {
+                        tmp.amount = tmp.amount - 1;
+                        event.target.nextElementSibling.innerText = tmp.amount;
                         } else {
                             let btnCartId = event.target.getAttribute('data-id');
                             this.btnRemoveAttribute(btnCartId);
                             this.cart = this.filterItem(this.cart, event.target);
-                            this.cartItems.removeChild(event.target.parentElement.parentElement.parentElement);
+                            event.target.closest('.cart-item').remove();
                             };
                     this.setCartTotal (this.cart);
                     Storage.saveCart(this.cart);
@@ -263,14 +261,14 @@ class App {
         for (let item of itemsInCart){
             let price = item.querySelector('.product-price').textContent;
             let amount = item.querySelector('.amount').textContent;
-            item.querySelector('.product-subtotal').textContent = '('+price*amount+')';
+            item.querySelector('.product-subtotal').textContent = ('+price*amount+');
         }*/
         let tmpTotal = '0';
         console.log(this);
         this.cart.map(item=>{
             tmpTotal = item.price*item.amount;
-            this.cartItems.querySelector(`#id${item.id} .product-subtotal`).textContent = 
-            parseFloat(tmpTotal.toFixed(2));
+            this.cartItems.querySelector(`#id${item.id} .product-subtotal`).textContent = '('+
+            parseFloat(tmpTotal.toFixed(2))+')';
 
         });
        
@@ -303,7 +301,7 @@ class App {
     return`
     <a href="#" class="category-item" data-category=${category.name}>
     <img src="${category.image}" alt="Фото товара" class="img-fluid-1">
-    <strong class="category-item-title" data-category=${category.name}>${category.name}</strong>
+    <strong class="category-item-title category-item" data-category=${category.name}>${category.name}</strong>
     </a>`;
 }
     makeCategories(categories){
@@ -311,17 +309,97 @@ class App {
         let div = document.createElement('div');
         div.className = "col-md-4";
         div.innerHTML=this.createCategory(categories[i]);
-        document.querySelector('.categories-collections').append(div);
+        document.querySelector('.categories').append(div);
+        }
+    }
 
+    renderCategory(){
+        const categories = document.querySelector('.categories');
+        console.log(categories);
+        categories.addEventListener('click', (event) =>{
+            const target = event.target;
+            console.log(target);
+            if(target.classList.contains('category-item')){
+                const category = target.dataset.category;
+                console.log(category);
+                const categoryFilter = items => items.filter(item=>item.category.includes(category));
+                console.log(categoryFilter);
+                this.makeShowcase(categoryFilter(Storage.getProducts()));
+            } else {
+                this.makeShowcase(Storage.getProducts());
+            }
+            this.addProductToCart();
+            this.renderCart();
+        });
+    }
+    
+    categoriesList(categories){
+    let result = '';
+    categories.forEach(element=>{
+        result+=`<li class="mb-2"><a class="reset-anchor category-item" href="#"
+        data-category="${element.name}">${element.name}</a></li>`
+    });
+    document.querySelector('.categories-list').innerHTML = result;
+    };
 
+    compareValue(key, order = 'asc'){
+    return function innerSort(a,b) {
+        if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)){
+            return 0;
+        }
+        const varA = (typeof a[key]==='string') ? a[key].toUpperCase(): a[key];
+        const varB = (typeof b[key]==='string') ? b[key].toUpperCase(): b[key];
+        let comparison = 0;
+        if(varA > varB) {
+            comparison = 1;
+        } else if (varA < varB){
+            comparison = -1;
+        }
+        return ((order === 'desc')? (comparison*-1):comparison);
+        }
+
+    }
+
+    makeCategoriesList(){
+    if (document.querySelector('.categories-list')){
+        console.log(document.querySelector('.categories-list'))
+        this.categoriesList(categories);
+    }
+    }
+    selectpicker(){
+        if(document.querySelector('.selectpicker')){
+            let selectpicker = document.querySelector('.selectpicker');
+            selectpicker.addEventListener('change', function () {
+                console.log(this.value);
+        
+                switch (this.value) {
+                    case 'low-high':
+                        this.makeShowcase(Storage.getProducts().sort(compareValue('price', 'asc')));
+                        break;
+                    case 'high-low':
+                        this.makeShowcase(Storage.getProducts().sort(compareValue('price', 'desc')));
+                        break;
+                    case 'popularity':
+                        TouchList.makeShowcase(Storage.getProducts().sort(compareValue('id', 'desc')));
+                    break; 
+                    default:
+                        this.makeShowcase(Storage.getProducts().sort(compareValue('id', 'asc')));
+                    break;
+                }
+                app.addProductToCart();
+                app.renderCart();
+            });
         }
     }
 }
 
+
 (function(){
 const app = new App();
-
+app.makeCategoriesList();
+app.selectpicker();
 app.addProductToCart();
 app.renderCart();
 app.heartsCount();
+app.renderCategory();
 })();
