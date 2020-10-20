@@ -1,13 +1,4 @@
 
-:root {
-    --primary-color1: hsl(240, 41%, 97%);
-    --primary-color2: hsl(221, 71%, 80%);
-    --primary-color6: hsl(0, 11%, 86%);
-    --primary-color3: black;
-    --primary-color4: hsl(51, 96%, 51%);
-    --primary-color5: rgb(48, 52, 58);
-}
-
 .trigger{
     display: none;
 }

@@ -3,6 +3,12 @@
 "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,900;1,300;1,400;1,700&display=swap";
 
 @import
+"https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap";
+
+@import 
+"https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&display=swap";
+
+@import
 "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css";
 
 :root {
@@ -10,7 +16,8 @@
     --primary-color5: hsl(221, 71%, 80%);
     --primary-color6: hsl(0, 11%, 86%);
     --primary-color3: black;
-    --primary-color4: hsl(51, 96%, 51%);
+    --primary-color4: hsl(350, 90%, 49%);
+    /*--primary-color4: hsl(51, 96%, 51%);*/
     --primary-color5: rgb(48, 52, 58);
 }
 
@@ -35,7 +42,9 @@ html {
  font-size: 1rem;
  line-height: 1.5;
  width: 100%;
- font-family: 'Roboto', sans-serif;
+  font-family: 'IBM Plex Serif', serif;
+ /*font-family: 'El Messiri', sans-serif;*/
+ /*font-family: 'Roboto', sans-serif;*/
  background: var(--primary-color6);
  /*background-image: url(../images/background-7.jpg);
  filter: alpha(Opacity=90);
@@ -58,17 +67,20 @@ nav {
     margin-top: 1.5rem;
 }
 .navbar-brand{
-    font-size: 1.5rem;
+    font-family: 'El Messiri', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
     display: inline-block;
     color: var(--primary-color3);
     padding-top: 0.3125rem;
     padding-right: 0.3125rem;
     white-space: nowrap;
     font-weight: 600;
+    color: var(--primary-color5);
 }
 
 .nav-center {
-    
+    font-weight: 600;
     margin: 0;
     display: flex;
     align-items: center;
@@ -139,7 +151,7 @@ nav {
 }
 .categories link a {
     text-decoration: none;
-    color: var(--primary-color5);
+    color: var(--primary-color3);
 }
 .categories a:hover{
     color: var(--primary-color4);
@@ -147,7 +159,7 @@ nav {
 .category-item {
     display: block;
     position: relative;
-    color: var(--primary-color5);
+    color: var(--primary-color3);
     font-size: 1rem;
     margin-top: 1rem;
     text-transform: uppercase;
@@ -166,6 +178,9 @@ nav {
     top: 80%;
     right: 0%;
     font-size: 1.2rem;
+}
+.category-item-title:hover {
+    color: var(--primary-color4);
 }
 
 /*Баннер*/

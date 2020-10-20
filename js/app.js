@@ -8,7 +8,9 @@ class Storage {
     static saveCart(cart){
         localStorage.setItem('basket', JSON.stringify(cart));
     }
-
+    static saveStorageItem(key, item){
+        localStorage.setItem(key, JSON.stringify(item));
+    }
     //методы, которые читают из LS
 
     static getProduct(id){
@@ -23,20 +25,34 @@ class Storage {
     static getCart(cart){
         return localStorage.getItem("basket")?JSON.parse(localStorage.getItem("basket")): [];
     } 
- 
+
+    static getCategories(){
+        return JSON.parse(localStorage.getItem('categories')); 
+    }
+
+}
+class Category {
+    makeModel(categories){
+        return categories.map(item =>{
+            const name = item.name;
+            const id = item.id;
+            const image = item.image;
+            return {id, name, image};
+        });
+    } 
 }
 class Product {
-    getProducts(products){
+    makeModel(products){
     return products.map(item =>{
-        const name = item.name;
-        const price = item.price;
-        const id = item.id;
-        const image = item.image;
-        const author = item.author;
-        const category = item.category;
-        return {id, name, price, image, author, category};
-        });
-    }
+       const name = item.name;
+       const price = item.price;
+       const id = item.id;
+       const image = item.image;
+       const author = item.author;
+       const category = item.category;
+       return {id, name, price, image, author, category};
+      });
+   }
 }
 
  
@@ -58,21 +74,17 @@ class App {
         sidebarOpen.addEventListener('click', () => this.openCart());
         closeBtn.addEventListener('click', () => this.closeCart());
 
-        if(document.querySelector('.collections')) {
-            this.makeCategories(categories);
-        }
+
         
         
-        let data = new Product();
-        Storage.saveProducts(data.getProducts(products));
-        this.makeShowcase(Storage.getProducts());
+        //let data = new Product();
+        //Storage.saveProducts(data.getProducts(products));
+        //this.makeShowcase(Storage.getProducts());
         this.cart = Storage.getCart();
-        console.log(this.cart);
+        //console.log(this.cart);
     };
 
-    getProduct(id){
-        return products.find(product => product.id===+(id));
-    };
+    getProduct = (id) => Storage.getProducts().find(product => product.id === +(id));
 
     //Cтроим каталог
     makeShowcase(products){ 
@@ -328,8 +340,9 @@ class App {
             } else {
                 this.makeShowcase(Storage.getProducts());
             }
-            this.addProductToCart();
             this.renderCart();
+            this.heartsCount();
+            this.addProductToCart();          
         });
     }
     
@@ -341,6 +354,14 @@ class App {
     });
     document.querySelector('.categories-list').innerHTML = result;
     };
+    
+    makeCategoriesList(){
+        if (document.querySelector('.categories-list')){
+            console.log(document.querySelector('.categories-list'));
+            this.categoriesList(Storage.getCategories());
+            console.log(this);
+        }
+    }
 
     compareValue(key, order = 'asc'){
     return function innerSort(a,b) {
@@ -360,46 +381,67 @@ class App {
 
     }
 
-    makeCategoriesList(){
-    if (document.querySelector('.categories-list')){
-        console.log(document.querySelector('.categories-list'))
-        this.categoriesList(categories);
-    }
-    }
+
     selectpicker(){
         if(document.querySelector('.selectpicker')){
             let selectpicker = document.querySelector('.selectpicker');
-            selectpicker.addEventListener('change', function () {
-                console.log(this.value);
-        
-                switch (this.value) {
+            selectpicker.addEventListener('change', () =>{
+                                
+                switch (selectpicker.value) {
                     case 'low-high':
-                        this.makeShowcase(Storage.getProducts().sort(compareValue('price', 'asc')));
+                        console.log(this);
+                        this.makeShowcase(Storage.getProducts().sort(this.compareValue('price', 'asc')));
+                        console.log(this);
                         break;
                     case 'high-low':
-                        this.makeShowcase(Storage.getProducts().sort(compareValue('price', 'desc')));
+                        this.makeShowcase(Storage.getProducts().sort(this.compareValue('price', 'desc')));
                         break;
                     case 'popularity':
-                        TouchList.makeShowcase(Storage.getProducts().sort(compareValue('id', 'desc')));
+                        this.makeShowcase(Storage.getProducts().sort(this.compareValue('id', 'desc')));
                     break; 
                     default:
-                        this.makeShowcase(Storage.getProducts().sort(compareValue('id', 'asc')));
+                        this.makeShowcase(Storage.getProducts().sort(this.compareValue('id', 'asc')));
                     break;
                 }
-                app.addProductToCart();
-                app.renderCart();
+                this.addProductToCart();
+                this.renderCart();
+                this.heartsCount();
             });
         }
     }
-}
 
+    fetchData(dataBase, model) {
+        const baseUrl =`https://my-json-server.typicode.com/sk-website/test/${dataBase}`;
+        fetch(baseUrl)
+            .then(response => {
+                if(response.status !== 200) {
+                    console.error(`Looks like there was a problem. Status code: ${response.status}`);
+                    return;
+                }
+                response.json().then(dataJson => {
+                    Storage.saveStorageItem(dataBase, model.makeModel(dataJson));
+                })
+            })
+            .catch(err => console.error('fetch Error : -S', err));
+    }
+  
+}
+ 
 
 (function(){
-const app = new App();
-app.makeCategoriesList();
-app.selectpicker();
-app.addProductToCart();
-app.renderCart();
-app.heartsCount();
-app.renderCategory();
-})();
+    const app = new App();
+    if(document.querySelector('.collections')) {
+        app.fetchData('categories', new Category());
+        app.fetchData('products', new Product());
+        app.makeCategories(Storage.getCategories());
+    } 
+    
+    app.makeShowcase(Storage.getProducts());
+    app.makeCategoriesList(Storage.getCategories());
+    app.selectpicker();
+    app.addProductToCart();
+    app.renderCart();
+    app.heartsCount();
+    app.renderCategory();
+
+    })();

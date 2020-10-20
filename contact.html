@@ -9,8 +9,7 @@
     <link href="css/effects.css" rel="stylesheet">
     <link href="css/nav.css" rel="stylesheet">
     <link href="css/form.css" rel="stylesheet">
-    <link href="css/jsstyle.css" rel="stylesheet">
-    <!--<link rel="icon" href="favicon.ico">-->
+    <link href="css/cart.css" rel="stylesheet">
 
 </head>
 <body>
@@ -28,12 +27,11 @@
                                 <li><a href="index.html">Главная</a></li>
                                 <li><a href="shop.html">В Галерею</a></li>
                                 <li><a href="about.html">О нас</a></li>
-                                <li><a href="blog.html">Блог</a></li>
                                 <li><a href="contact.html">Контакты</a></li>
                             </ul>
                         </div>
                         <ul class="navbar-tool">
-                            <li><a href="#"><i class="fas fa-shopping-cart"></i>(2)</a></li>
+                            <li><a href="#"><i class="fas fa-shopping-basket"></i>(<small class="to-cart">0</small>)</a></li>
                             <li><a href="#"><i class="far fa-heart"></i>(<small class="like-me">0</small>)</a></li>
                             <li><a href="#login"><i class="fas fa-user"></i>Войти</a></li>
                         </ul>
@@ -85,6 +83,23 @@
         
 
         </div>
+
+          <!--модальное окно при работе с корзиной-->
+    <div class="over"></div>
+    <!--Корзина-->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <button class="close-btn"><i class="fas fa-times"></i></button>
+            <h5 class="logo">Ваша корзина</h5>
+        </div>
+        
+        <div class="cart-items">
+        </div>
+        <div class="cart-footer">
+            <h3>Итого: $<span class="cart-total">0</span></h3>
+            <button class="clear-cart">Очистить корзину</button>
+        </div>
+    </aside>
    
     <!--footer-->
     <footer>
@@ -107,7 +122,6 @@
                             <ul class="list-unstyled xl-font lg-font md-font sm-font">
                                 <li><a class="footer-link" href="contact.html">Контакты</a></li>
                                 <li><a class="footer-link" href="#">Сотрудничество</a></li>
-                                <li><a class="footer-link" href="#">Блог</a></li>
                                 <li><a class="footer-link" href="#">Ответы на вопросы</a></li>
                             </ul>
                         </div>
@@ -188,5 +202,6 @@
             </div>
         </div>
 
+        <script src="js/app.js"></script>
 </body>
 </html>
