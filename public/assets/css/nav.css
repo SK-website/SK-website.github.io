@@ -1,0 +1,28 @@
+
+.trigger{
+    display: none;
+}
+#hamburger:checked ~.navbar-links{
+position: absolute;
+width: 100%;
+height: auto;
+left: 0;
+top: 40px;
+background-color: var(--primary-color6);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 10;
+transition: all 0.2s;
+}
+#hamburger:checked ~.navbar-links .navbar-nav{
+    height: auto;
+    background-color: var(--primary-color6);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    font-weight: 600;
+}
