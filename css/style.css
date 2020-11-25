@@ -186,13 +186,13 @@ nav {
 /*Баннер*/
 .hero {
     min-height: 20vh;
-    background-image: url(../images/24.jpg);
+    background-image: url(../images/37.jpg);
     background-size: cover;
     background-position: center;
 }
 
 .banner-style{
-color: var(--primary-color5);
+color: var(--primary-color3);
 
 }
 .banner-style p{
@@ -217,7 +217,7 @@ color: var(--primary-color5);
     padding-left: -15px;
 }
 .product {
-    background-color: var(--primary-color1);
+    background-color: var(--primary-color6);
 }
 .text-center {
     text-align: center !important;
@@ -226,7 +226,7 @@ color: var(--primary-color5);
     position: relative !important;
 }
 .card {
-    background-color: var(--primary-color1);
+    background-color: var(--primary-color6);
     position: relative;
 }
  .card-overlay {
